@@ -102,14 +102,14 @@ Step 1   bootstrap on main (scripts, workspaces, schema index stubs all pre-wire
 
 **Context:** Repo has an **empty bootstrap commit** (`a77ef6e`) and plans committed on `docs/plans-bootstrap` — this step adds the first code commit. Owns all shared wiring so parallel steps never touch root files again.
 **Tasks:**
-- [ ] npm workspaces: `packages/schema`, `extractor`, `atlas`, `content` (package.json per workspace; `plans/` NOT a workspace)
-- [ ] Root scripts wired NOW: `lint`, `format`, `typecheck`, `test` (vitest, may be empty), `extract`, `validate:data`, `build`, `dev` — later steps fill implementations, scripts exist from day one
-- [ ] `packages/schema/src/{index.ts,component.ts,repo.ts,content.ts}` — index exports from all three; `component/repo/content` are placeholder schemas for their owner step to replace
-- [ ] Biome + base tsconfig + vitest config; zod + vitest as workspace deps; `engines: {"node": ">=22"}`; commit `package-lock.json` **and `.node-version` (= `22`)** for `actions/setup-node`'s `node-version-file`
-- [ ] `.gitignore`: `node_modules/`, `atlas/dist/`, `.extractor-cache/`, `.vite/`
-- [ ] Merge `docs/plans-bootstrap` (contains `plans/otel-contrib-atlas.md` + `plans/INDEX.md`) into `main` as part of this step
-- [ ] Minimal `README.md` (one-paragraph goal, link to plan)
-- [ ] Commit directly to `main`, push (`git push origin main`)
+- [x] npm workspaces: `packages/schema`, `extractor`, `atlas`, `content` (package.json per workspace; `plans/` NOT a workspace)
+- [x] Root scripts wired NOW: `lint`, `format`, `typecheck`, `test` (vitest, may be empty), `extract`, `validate:data`, `build`, `dev` — later steps fill implementations, scripts exist from day one
+- [x] `packages/schema/src/{index.ts,component.ts,repo.ts,content.ts}` — index exports from all three; `component/repo/content` are placeholder schemas for their owner step to replace
+- [x] Biome + base tsconfig + vitest config; zod + vitest as workspace deps; `engines: {"node": ">=22"}`; commit `package-lock.json` **and `.node-version` (= `22`)** for `actions/setup-node`'s `node-version-file`
+- [x] `.gitignore`: `node_modules/`, `atlas/dist/`, `.extractor-cache/`, `.vite/`
+- [x] Merge `docs/plans-bootstrap` (contains `plans/otel-contrib-atlas.md` + `plans/INDEX.md`) into `main` as part of this step
+- [x] Minimal `README.md` (one-paragraph goal, link to plan)
+- [x] Commit directly to `main`, push (`git push origin main`)
 
 **Verify:** `npm install && npm run lint && npm run typecheck && npm test` → clean; `git log --oneline` shows bootstrap + plans merge + this step (≥3 commits); `npm run build` failure acceptable ONLY if it fails because Step 4 hasn't happened (stub error message, not crash).
 **Exit:** main pushed; all scripts exist; invariants scoped to Step 1 (lint/typecheck/test) green.
@@ -300,3 +300,4 @@ Each step rolls back by reverting its merge commit; Steps 5/6/7/8 are disjoint v
 | 2026-10-01 | Blueprint drafted (research: gh API, 367 metadata.yaml confirmed) |
 | 2026-10-01 | Review r1: 23 findings (1 critical, 11 major, 11 minor) — all applied: Pages base/hash routing, DAG edges 3→6/7, schema file partitioning, stub routes (schema stubs in Step 1, router stubs in Step 4), phase-scoped invariants, content import path, regions.json owner, meta.json emitter, Step 2 split into 2a/2b, parity vitests for 5/6/7, determinism + dependency-hygiene watchlist, sparse clone mandatory, gh-api link check, low-owner-only helper, data size budget, docs moved after deploy |
 | 2026-10-01 | Review r2: 7 findings (2 major, 5 minor) — all applied: Step 3 verify decoupled from sibling's validate:data, starter-issues moved to Step 3 ownership, §5 garble cleaned, {5} gated on 4 only, Step 10 file-ownership carve-out, .node-version file, npm ci in refresh workflow |
+| 2026-10-01 | Step 1 executed: monorepo bootstrap pushed to `main` — plans branch merged, npm workspaces (schema/extractor/content/atlas), root scripts wired, schema placeholder exports, Biome + tsconfig + vitest, `.node-version`/lockfile committed |

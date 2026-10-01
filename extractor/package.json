@@ -1,0 +1,10 @@
+{
+  "name": "@otel-demo/extractor",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "extract": "echo 'extract ships in Step 2a (see plans/otel-contrib-atlas.md)' && exit 1",
+    "validate:data": "echo 'validate:data ships in Step 2a (see plans/otel-contrib-atlas.md)' && exit 1"
+  }
+}

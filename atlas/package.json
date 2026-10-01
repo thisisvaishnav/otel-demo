@@ -1,0 +1,10 @@
+{
+  "name": "@otel-demo/atlas",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'atlas dev server ships in Step 4 (see plans/otel-contrib-atlas.md)' && exit 1",
+    "build": "echo 'atlas build ships in Step 4 (see plans/otel-contrib-atlas.md)' && exit 1"
+  }
+}
