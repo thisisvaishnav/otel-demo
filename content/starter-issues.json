@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "issues": [
+    {
+      "id": "starter-couchdbreceiver",
+      "kind": "component",
+      "label": "CouchDB receiver",
+      "component_id": "receiver/couchdbreceiver",
+      "reason": "A beta metrics receiver with one active code owner, so the surface you have to learn before contributing is small and review will be focused.",
+      "anchor": "view.workflow"
+    },
+    {
+      "id": "starter-groupbytraceprocessor",
+      "kind": "component",
+      "label": "Group by trace processor",
+      "component_id": "processor/groupbytraceprocessor",
+      "reason": "A beta traces processor with one code owner; its buffering behaviour is easy to exercise directly with unit tests.",
+      "anchor": "view.workflow"
+    },
+    {
+      "id": "starter-influxdbexporter",
+      "kind": "component",
+      "label": "InfluxDB exporter",
+      "component_id": "exporter/influxdbexporter",
+      "reason": "A beta exporter covering logs, metrics and traces with a single active owner — a good landing spot for backend-specific fixes.",
+      "anchor": "view.workflow"
+    },
+    {
+      "id": "starter-countconnector",
+      "kind": "component",
+      "label": "Count connector",
+      "component_id": "connector/countconnector",
+      "reason": "Connectors are one of the smallest classes in contrib, and this one has a single owner with a well-defined, self-contained counting behaviour.",
+      "anchor": "view.workflow"
+    },
+    {
+      "id": "starter-basicauthextension",
+      "kind": "component",
+      "label": "Basic auth extension",
+      "component_id": "extension/basicauthextension",
+      "reason": "An auth extension with one active owner, where configuration parsing and round-trip tests keep the blast radius of any change small.",
+      "anchor": "view.workflow"
+    },
+    {
+      "id": "starter-carbonreceiver",
+      "kind": "component",
+      "label": "Carbon receiver",
+      "component_id": "receiver/carbonreceiver",
+      "reason": "A beta metrics receiver speaking a plain-text line protocol over UDP or TCP, which makes it straightforward to reproduce a report locally.",
+      "anchor": "view.workflow"
+    },
+    {
+      "id": "starter-elasticsearch-docs",
+      "kind": "issue",
+      "label": "[exporter/elasticsearch] Document indexed document structure",
+      "issue_url": "https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/39342",
+      "reason": "A documentation-only issue already labelled `good first issue`: explain how the exporter indexes documents, with no behaviour change and therefore a low-risk first pull request.",
+      "anchor": "view.workflow"
+    }
+  ]
+}
