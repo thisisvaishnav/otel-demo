@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "extract": "echo 'extract ships in the Step 2a extraction PR (see plans/otel-contrib-atlas.md)' && exit 1",
-    "validate:data": "echo 'validate:data ships in the Step 2a extraction PR (see plans/otel-contrib-atlas.md)' && exit 1",
+    "extract": "tsx src/index.ts",
+    "validate:data": "tsx src/validate.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
