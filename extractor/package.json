@@ -4,7 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "extract": "echo 'extract ships in Step 2a (see plans/otel-contrib-atlas.md)' && exit 1",
-    "validate:data": "echo 'validate:data ships in Step 2a (see plans/otel-contrib-atlas.md)' && exit 1"
+    "extract": "echo 'extract ships in the Step 2a extraction PR (see plans/otel-contrib-atlas.md)' && exit 1",
+    "validate:data": "echo 'validate:data ships in the Step 2a extraction PR (see plans/otel-contrib-atlas.md)' && exit 1",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@otel-demo/schema": "0.0.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6"
   }
 }
