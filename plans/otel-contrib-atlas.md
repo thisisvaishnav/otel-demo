@@ -92,7 +92,7 @@ Step 1   bootstrap on main (scripts, workspaces, schema index stubs all pre-wire
 **Parallel sets:** {2a, 3} after 1 · {2b, 4} after 2a · **{5} after 4 alone; {6, 7} after {4, 2b, 3}** · **8 after {4, 3}, runs in parallel with 5/6/7** (touches overlay + glossary files only) · 11 strictly after 10 (README must contain the live URL).
 
 **File-ownership guarantee (replaces old §7.7):** each parallel step owns disjoint files —
-`2a: packages/schema/src/component.ts, extractor/src/components/*` · `3: content/* + packages/schema/src/content.ts` · `2b: packages/schema/src/repo.ts, extractor/src/repo/*` · `4: atlas/src/{shell,routes,loader,views/catalog}/* + vite.config.ts` · `5/6/7: atlas/src/views/{pipeline,architecture,workflow}/*` (Step 4 pre-creates router entries pointing at stub modules so siblings never edit the router) · `8: atlas/src/glossary/*` · `10: .github/ + atlas/vite.config.ts (base-path only)`. Shared files (`packages/schema/src/index.ts`, root `package.json`) are pre-wired in Step 1 and never edited again.
+`2a: packages/schema/src/component.ts, extractor/src/components/*` · `3: content/* + packages/schema/src/content.ts` · `2b: packages/schema/src/repo.ts, extractor/src/repo/*` · `4: atlas/src/{shell,routes,loader,views/catalog}/* + vite.config.ts` · `5/6/7: atlas/src/views/{pipeline,architecture,workflow}/*` (Step 4 pre-creates router entries pointing at stub modules so siblings never edit the router) · `8: atlas/src/glossary/*` · `10: .github/ + atlas/vite.config.ts (base-path only)`. Shared files (`packages/schema/src/index.ts`, root `package.json`) are pre-wired in Step 1 and never edited again — **except additive npm-script slots** (`agents:*`, `eval:*`) **and additive vitest include-globs** (`harness/test/`) required by `plans/agent-team-harness.md`; adding scripts/globs is allowed, restructuring is not.
 
 **Model tiers:** strongest for Steps 2a and 4; default for all others; 9/10 default + review.
 
@@ -100,18 +100,18 @@ Step 1   bootstrap on main (scripts, workspaces, schema index stubs all pre-wire
 
 ### Step 1 — Bootstrap monorepo on `main`
 
-**Context:** Repo has zero commits; everything hangs off this. Owns all shared wiring so parallel steps never touch root files again.
+**Context:** Repo has an **empty bootstrap commit** (`a77ef6e`) and plans committed on `docs/plans-bootstrap` — this step adds the first code commit. Owns all shared wiring so parallel steps never touch root files again.
 **Tasks:**
 - [ ] npm workspaces: `packages/schema`, `extractor`, `atlas`, `content` (package.json per workspace; `plans/` NOT a workspace)
 - [ ] Root scripts wired NOW: `lint`, `format`, `typecheck`, `test` (vitest, may be empty), `extract`, `validate:data`, `build`, `dev` — later steps fill implementations, scripts exist from day one
 - [ ] `packages/schema/src/{index.ts,component.ts,repo.ts,content.ts}` — index exports from all three; `component/repo/content` are placeholder schemas for their owner step to replace
 - [ ] Biome + base tsconfig + vitest config; zod + vitest as workspace deps; `engines: {"node": ">=22"}`; commit `package-lock.json` **and `.node-version` (= `22`)** for `actions/setup-node`'s `node-version-file`
 - [ ] `.gitignore`: `node_modules/`, `atlas/dist/`, `.extractor-cache/`, `.vite/`
-- [ ] Commit the existing `plans/otel-contrib-atlas.md` + create `plans/INDEX.md`
+- [ ] Merge `docs/plans-bootstrap` (contains `plans/otel-contrib-atlas.md` + `plans/INDEX.md`) into `main` as part of this step
 - [ ] Minimal `README.md` (one-paragraph goal, link to plan)
 - [ ] Commit directly to `main`, push (`git push origin main`)
 
-**Verify:** `npm install && npm run lint && npm run typecheck && npm test` → clean; `git log --oneline` shows 1 commit; `npm run build` failure acceptable ONLY if it fails because Step 4 hasn't happened (stub error message, not crash).
+**Verify:** `npm install && npm run lint && npm run typecheck && npm test` → clean; `git log --oneline` shows bootstrap + plans merge + this step (≥3 commits); `npm run build` failure acceptable ONLY if it fails because Step 4 hasn't happened (stub error message, not crash).
 **Exit:** main pushed; all scripts exist; invariants scoped to Step 1 (lint/typecheck/test) green.
 
 ### Step 2a — Component schema + extraction  ⚑ strongest
@@ -236,7 +236,7 @@ Run: `npm test`.
 
 **Context:** After 9. Repo automation; touches only `.github/` + `atlas/vite.config.ts` if a base-path fix surfaces.
 **Tasks:**
-- [ ] `.github/workflows/ci.yml` (PR): `npm ci`, lint, typecheck, test, validate:data, build (post-build grep: no `api.github.com` in `atlas/src`)
+- [ ] `.github/workflows/ci.yml` (PR): `npm ci`, lint, typecheck, test, validate:data, build (post-build grep: no `api.github.com` in `atlas/src`). **This step CREATES `ci.yml`.** The harness plan's S9 only EXTENDS it and is ordered AFTER this step; if S9 landed first (fallback minimal CI), this step must merge/reconcile, not overwrite (dedup note mirrored in `agent-team-harness.md` §0/S9)
 - [ ] `.github/workflows/extract-refresh.yml`: `workflow_dispatch` + weekly cron → `npm ci && npm run extract` → open PR if `git diff` non-empty (never push generated data to main); includes optional lychee link-rot pass over `content/*.json`
 - [ ] `.github/workflows/deploy.yml` (main): build → Pages; enable Pages via `gh api` if absent
 - [ ] **Post-deploy smoke check job/curl:** `curl -fsS "$SITE/otel-demo/"` and `curl -fsS "$SITE/otel-demo/data/components.json"` (base-path + data path verified from real Pages URL)
