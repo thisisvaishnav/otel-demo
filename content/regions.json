@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "views": [
+    {
+      "id": "view.catalog",
+      "route": "#/catalog",
+      "label": "Component catalog",
+      "summary": "Every receiver, processor, exporter, extension, connector and scraper in contrib as clickable islands — coloured by stability, filterable by name, class, signal and code owner."
+    },
+    {
+      "id": "view.pipeline",
+      "route": "#/pipeline",
+      "label": "Data-flow pipeline",
+      "summary": "The three signal lines — traces, metrics and logs — with receivers, processors and exporters placed on them and connectors bridging between lines."
+    },
+    {
+      "id": "view.architecture",
+      "route": "#/architecture",
+      "label": "Code architecture",
+      "summary": "How the contrib repository is laid out: confmap, internal, pkg, cmd, config, testbed, docs and .chloggen, plus the Go modules and Makefile machinery behind them."
+    },
+    {
+      "id": "view.workflow",
+      "route": "#/workflow",
+      "label": "Contribution workflow",
+      "summary": "The ordered journey from finding an issue to a merged pull request, with the contrib file and command behind every stop."
+    },
+    {
+      "id": "view.glossary",
+      "route": "#/glossary",
+      "label": "Glossary",
+      "summary": "Every term the atlas uses, defined once and linked to the contrib source that evidences it."
+    }
+  ],
+  "regions": [
+    {
+      "id": "region.receiver",
+      "kind": "component-class",
+      "path": "receiver/",
+      "view": "view.catalog",
+      "label": "Receivers",
+      "summary": "Ingest telemetry from a source — a socket, a file, an API or a scrape target — and hand it to the pipeline as traces, metrics or logs."
+    },
+    {
+      "id": "region.processor",
+      "kind": "component-class",
+      "path": "processor/",
+      "view": "view.catalog",
+      "label": "Processors",
+      "summary": "Transform, filter, sample, batch or enrich telemetry between receivers and exporters."
+    },
+    {
+      "id": "region.exporter",
+      "kind": "component-class",
+      "path": "exporter/",
+      "view": "view.catalog",
+      "label": "Exporters",
+      "summary": "Terminate a pipeline by sending telemetry to a backend such as an OTLP endpoint, Prometheus or a message queue."
+    },
+    {
+      "id": "region.extension",
+      "kind": "component-class",
+      "path": "extension/",
+      "view": "view.catalog",
+      "label": "Extensions",
+      "summary": "Provide capabilities outside the telemetry pipeline itself: auth, health checks, storage, observers and OpAMP."
+    },
+    {
+      "id": "region.connector",
+      "kind": "component-class",
+      "path": "connector/",
+      "view": "view.catalog",
+      "label": "Connectors",
+      "summary": "Consume from one pipeline and produce into another, bridging signals such as traces to metrics or fanning one stream into several."
+    },
+    {
+      "id": "region.scraper",
+      "kind": "component-class",
+      "path": "scraper/",
+      "view": "view.catalog",
+      "label": "Scrapers",
+      "summary": "Pull metrics from a target on a schedule; scrapers are composed into receivers such as the hostmetrics receiver."
+    },
+    {
+      "id": "region.confmap",
+      "kind": "dir",
+      "path": "confmap/",
+      "view": "view.architecture",
+      "label": "confmap",
+      "summary": "Configuration mapping: resolves config URIs and providers so YAML is turned into typed component configuration."
+    },
+    {
+      "id": "region.internal",
+      "kind": "dir",
+      "path": "internal/",
+      "view": "view.architecture",
+      "label": "internal",
+      "summary": "Packages shared only inside this repository — the place for code that must not become public API."
+    },
+    {
+      "id": "region.pkg",
+      "kind": "dir",
+      "path": "pkg/",
+      "view": "view.architecture",
+      "label": "pkg",
+      "summary": "Public Go modules meant for external consumption, such as ottl, stanza and the golden test helpers."
+    },
+    {
+      "id": "region.cmd",
+      "kind": "dir",
+      "path": "cmd/",
+      "view": "view.architecture",
+      "label": "cmd",
+      "summary": "Binaries built from this repository: otelcontribcol, oteltestbedcol, telemetrygen, opampsupervisor and the code generators."
+    },
+    {
+      "id": "region.config",
+      "kind": "dir",
+      "path": "config/",
+      "view": "view.architecture",
+      "label": "config",
+      "summary": "Shared configuration packages used by components, currently the database auth configuration helpers."
+    },
+    {
+      "id": "region.testbed",
+      "kind": "dir",
+      "path": "testbed/",
+      "view": "view.architecture",
+      "label": "testbed",
+      "summary": "The controlled environment for end-to-end, correctness, stability and load tests of the collector."
+    },
+    {
+      "id": "region.docs",
+      "kind": "dir",
+      "path": "docs/",
+      "view": "view.architecture",
+      "label": "docs",
+      "summary": "Contributor-facing documentation: donating new components, testing guidance, the release process and ready-made PR text."
+    },
+    {
+      "id": "region.chloggen",
+      "kind": "dir",
+      "path": ".chloggen/",
+      "view": "view.architecture",
+      "label": ".chloggen",
+      "summary": "One YAML entry per user-facing change; chloggen folds them into CHANGELOG.md and CHANGELOG-API.md at release time."
+    },
+    {
+      "id": "region.contributing",
+      "kind": "file",
+      "path": "CONTRIBUTING.md",
+      "view": "view.workflow",
+      "label": "CONTRIBUTING.md",
+      "summary": "The contributor entry point: local testing, changelog rules, PR titles, labels via comments, roles and Makefile guidelines."
+    },
+    {
+      "id": "region.issue-triaging",
+      "kind": "file",
+      "path": "issue-triaging.md",
+      "view": "view.workflow",
+      "label": "issue-triaging.md",
+      "summary": "Issue roles, the triage process, label definitions and the state diagram every new issue moves through."
+    },
+    {
+      "id": "region.issue-templates",
+      "kind": "dir",
+      "path": ".github/ISSUE_TEMPLATE/",
+      "view": "view.workflow",
+      "label": "Issue templates",
+      "summary": "The structured forms used to file bug reports, feature requests, new component donations and component graduations."
+    },
+    {
+      "id": "region.pr-template",
+      "kind": "file",
+      "path": ".github/pull_request_template.md",
+      "view": "view.workflow",
+      "label": "Pull request template",
+      "summary": "The sections every pull request must fill in: description, tracking issue, testing, documentation and authorship."
+    },
+    {
+      "id": "region.codeowners",
+      "kind": "file",
+      "path": ".github/CODEOWNERS",
+      "view": "view.workflow",
+      "label": "CODEOWNERS",
+      "summary": "Maps every path in the repository to the people notified to review changes to it; generated from metadata.yaml."
+    },
+    {
+      "id": "region.github-workflows",
+      "kind": "dir",
+      "path": ".github/workflows/",
+      "view": "view.workflow",
+      "label": "GitHub workflows",
+      "summary": "CI and release automation, including the script that decides which modules a pull request has to test."
+    },
+    {
+      "id": "region.distributions",
+      "kind": "file",
+      "path": "distributions.yaml",
+      "view": "view.architecture",
+      "label": "distributions.yaml",
+      "summary": "The list of distributions a component may declare membership in from its metadata.yaml."
+    },
+    {
+      "id": "region.makefile",
+      "kind": "file",
+      "path": "Makefile",
+      "view": "view.architecture",
+      "label": "Makefile",
+      "summary": "Repo-level targets that wrap the per-module targets in Makefile.Common for the whole repository."
+    },
+    {
+      "id": "region.mdatagen-config",
+      "kind": "file",
+      "path": ".mdatagen.yaml",
+      "view": "view.architecture",
+      "label": ".mdatagen.yaml",
+      "summary": "Repository-wide mdatagen configuration: lifecycle tests, goleak and feature gate exclusions per component."
+    },
+    {
+      "id": "region.schemagen-config",
+      "kind": "file",
+      "path": ".schemagen.yaml",
+      "view": "view.architecture",
+      "label": ".schemagen.yaml",
+      "summary": "schemagen configuration: type mappings, allowed external refs and per-component overrides that steer how Go config structs become config.schema.yaml."
+    },
+    {
+      "id": "region.builder-config",
+      "kind": "file",
+      "path": "cmd/otelcontribcol/builder-config.yaml",
+      "view": "view.architecture",
+      "label": "builder-config.yaml",
+      "summary": "The manifest of components compiled into the otelcontribcol binary of the contrib distribution."
+    },
+    {
+      "id": "region.component-dir",
+      "kind": "concept",
+      "view": "view.architecture",
+      "label": "Component directory",
+      "summary": "One directory per component — for example receiver/prometheusreceiver/ — holding metadata.yaml, factory and config sources, go.mod, generated documentation and tests."
+    }
+  ]
+}

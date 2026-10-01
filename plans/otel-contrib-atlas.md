@@ -132,12 +132,14 @@ Step 1   bootstrap on main (scripts, workspaces, schema index stubs all pre-wire
 
 **Context:** Hand-authored, schema-validated. Every term must state what it means + where it lives (`anchor` id) + a link evidenced in contrib source (CONTRIBUTING.md / docs / metadata) — no invented terms. Owns `content/*` and `packages/schema/src/content.ts` only.
 **Tasks:**
-- [ ] **`content/regions.json`** — canonical registry of region + view ids; every other content file's anchors must resolve here (Step 8 CI check depends on it)
-- [ ] `content/glossary.json` — ≥30 terms, minimum set: pipeline, receiver, processor, exporter, extension, connector, consumer, signal, OTLP, stability (alpha/beta/stable), distribution (core/contrib/k8s), confmap, factory, mdatagen, metadata.yaml, scraper, feature gate, capability, CODEOWNERS, `.chloggen`, component status vs stability, testbed, goleak, config schema, distribution membership
-- [ ] `content/workflow.json` — ordered contributing stops, each with `file_anchor` into contrib (ISSUE_TEMPLATE, issue-triaging.md, CONTRIBUTING.md, mdatagen scaffold, make targets, .chloggen, pull_request_template, CODEOWNERS)
-- [ ] `content/architecture.json` — narratives + region defs for confmap, internal, pkg, cmd, config, testbed, docs, .chloggen
-- [ ] **`content/starter-issues.json`** — optional hand-curated list of good starter components/issues (schema in `content.ts`); Step 7 consumes it if present
-- [ ] `packages/schema/src/content.ts`: `GlossaryTerm`, `WorkflowStep`, `ArchRegion`, `Regions`, `StarterIssue` schemas
+- [x] **`content/regions.json`** — canonical registry of region + view ids; every other content file's anchors must resolve here (Step 8 CI check depends on it)
+- [x] `content/glossary.json` — ≥30 terms, minimum set: pipeline, receiver, processor, exporter, extension, connector, consumer, signal, OTLP, stability (alpha/beta/stable), distribution (core/contrib/k8s), confmap, factory, mdatagen, metadata.yaml, scraper, feature gate, capability, CODEOWNERS, `.chloggen`, component status vs stability, testbed, goleak, config schema, distribution membership
+- [x] `content/workflow.json` — ordered contributing stops, each with `file_anchor` into contrib (ISSUE_TEMPLATE, issue-triaging.md, CONTRIBUTING.md, mdatagen scaffold, make targets, .chloggen, pull_request_template, CODEOWNERS)
+- [x] `content/architecture.json` — narratives + region defs for confmap, internal, pkg, cmd, config, testbed, docs, .chloggen
+- [x] **`content/starter-issues.json`** — optional hand-curated list of good starter components/issues (schema in `content.ts`); Step 7 consumes it if present
+- [x] `packages/schema/src/content.ts`: `GlossaryTerm`, `WorkflowStep`, `ArchRegion`, `Regions`, `StarterIssue` schemas
+
+**Evidence (link check + minimum set):** `content/check-links.mjs` (gh api resolver) resolves all 51 distinct file anchors and the curated issue link against `open-telemetry/opentelemetry-collector-contrib` — 0 orphans; 39 glossary terms ≥ the required 30, covering all 25 terms of the minimum set; `content/content.test.ts` re-checks schema validity and `anchor ∈ regions.json` offline in `npm test`.
 
 **Verify:** `npm test` — Step 3's own vitest suite parses every `content/*.json` against its `content.ts` schemas and asserts every anchor id ∈ `regions.json` (the cross-file `npm run validate:data` integration runs from Step 2a onward, per §4); link check with **`gh api` resolver as primary** (`gh api repos/.../contents/<path> --jq .sha` per anchor; `lychee` optional only): all file anchors resolve; term count ≥ 30.
 **Exit:** content committed, all anchors resolve against `regions.json`.
@@ -148,7 +150,7 @@ Step 1   bootstrap on main (scripts, workspaces, schema index stubs all pre-wire
 **Tasks:**
 - [ ] `packages/schema/src/repo.ts`: `ModuleDep`, `RepoFile` schemas
 - [ ] Per-directory `go.mod` requires filtered to `github.com/open-telemetry/opentelemetry-collector*` → `moduledeps.json`
-- [ ] `.github/CODEOWNERS` → owner/path pairs; `distributions.yaml` → membership; `docs/`, `CONTRIBUTING.md`, `issue-triaging.md`, `.chloggen/` headings → `repofiles.json`
+- [ ] `.github/CODEOWNERS` → owner/path pairs; `distributions.yaml` → membership; `docs/`, `CONTRIBUTING.md`, `issue-triaging.md`, `.chloggen/` headings → `repofiles.json` — the file/dir keys must also cover every `file_anchor` in `content/workflow.json`, because Step 7's parity test asserts membership (Step 3 supplies that list)
 - [ ] Sanity: ≥10 module deps, CODEOWNERS non-empty, all emit paths < 500 KB
 - [ ] Vitest fixtures for go.mod parsing + CODEOWNERS pattern matching
 
@@ -301,3 +303,4 @@ Each step rolls back by reverting its merge commit; Steps 5/6/7/8 are disjoint v
 | 2026-10-01 | Review r1: 23 findings (1 critical, 11 major, 11 minor) — all applied: Pages base/hash routing, DAG edges 3→6/7, schema file partitioning, stub routes (schema stubs in Step 1, router stubs in Step 4), phase-scoped invariants, content import path, regions.json owner, meta.json emitter, Step 2 split into 2a/2b, parity vitests for 5/6/7, determinism + dependency-hygiene watchlist, sparse clone mandatory, gh-api link check, low-owner-only helper, data size budget, docs moved after deploy |
 | 2026-10-01 | Review r2: 7 findings (2 major, 5 minor) — all applied: Step 3 verify decoupled from sibling's validate:data, starter-issues moved to Step 3 ownership, §5 garble cleaned, {5} gated on 4 only, Step 10 file-ownership carve-out, .node-version file, npm ci in refresh workflow |
 | 2026-10-01 | Step 1 executed: monorepo bootstrap pushed to `main` — plans branch merged, npm workspaces (schema/extractor/content/atlas), root scripts wired, schema placeholder exports, Biome + tsconfig + vitest, `.node-version`/lockfile committed |
+| 2026-10-02 | Step 3 executed (PR, parallel with 2a): content layer shipped — `regions.json` registry (5 views, 26 regions incl. the 8 architecture regions), 39 glossary terms (all 25 of the minimum set), 9 ordered workflow stops, 8 architecture narratives, 7 curated starter picks; `content.ts` schemas + `contribUrl()` helper; offline vitest suite (32 tests) asserts schema validity, `anchor ∈ regions.json` and `file_anchor ↔ region.path` consistency, `content/check-links.mjs` resolves 51 file anchors + the curated issue via `gh api`; `content` workspace gains its own `typecheck`/`check-links` scripts and declares `@otel-demo/schema` (lockfile entry only); Step 2b's `repofiles.json` task annotated to cover every workflow `file_anchor` so Step 7's parity test can hold |

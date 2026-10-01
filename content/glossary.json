@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "terms": [
+    {
+      "id": "pipeline",
+      "term": "pipeline",
+      "definition": "A configured chain of receivers, processors and exporters that telemetry flows through. Pipelines are declared under `service.pipelines` in the collector configuration, one per signal, and components are wired into them by their type id.",
+      "anchor": "view.pipeline",
+      "source": { "path": "connector/spanmetricsconnector/README.md" },
+      "aliases": ["service pipeline"],
+      "related": ["signal", "consumer", "receiver", "exporter"]
+    },
+    {
+      "id": "receiver",
+      "term": "receiver",
+      "definition": "A component that ingests telemetry from a source — a socket, a file, an API or a scrape target — and passes it into the pipeline. Its `status.class` in metadata.yaml is `receiver`.",
+      "anchor": "region.receiver",
+      "source": { "path": "receiver/prometheusreceiver/metadata.yaml" },
+      "related": ["pipeline", "scraper", "metadata-yaml"]
+    },
+    {
+      "id": "processor",
+      "term": "processor",
+      "definition": "A component that sits between receivers and exporters to transform, filter, sample, batch or enrich telemetry before it leaves the collector.",
+      "anchor": "region.processor",
+      "source": { "path": "processor/transformprocessor/metadata.yaml" },
+      "related": ["pipeline", "capability"]
+    },
+    {
+      "id": "exporter",
+      "term": "exporter",
+      "definition": "A component that terminates a pipeline by sending telemetry to a backend such as an OTLP endpoint, a Prometheus-compatible store or a message queue.",
+      "anchor": "region.exporter",
+      "source": { "path": "exporter/prometheusremotewriteexporter/metadata.yaml" },
+      "related": ["pipeline", "otlp"]
+    },
+    {
+      "id": "extension",
+      "term": "extension",
+      "definition": "A component that provides capabilities outside the telemetry pipeline itself — authentication, health checks, storage, service observers and OpAMP — and therefore attaches to the service rather than to a pipeline.",
+      "anchor": "region.extension",
+      "source": { "path": "extension/healthcheckextension/metadata.yaml" },
+      "related": ["capability", "feature-gate"]
+    },
+    {
+      "id": "connector",
+      "term": "connector",
+      "definition": "A component that consumes from one pipeline and produces into another, either bridging signals (for example traces to metrics) or fanning a single stream out to several destinations.",
+      "anchor": "region.connector",
+      "source": { "path": "connector/spanmetricsconnector/metadata.yaml" },
+      "related": ["pipeline", "signal"]
+    },
+    {
+      "id": "scraper",
+      "term": "scraper",
+      "definition": "A component that pulls metrics from a target on an interval. Scrapers are not pipelines themselves: they are composed into receivers such as the hostmetrics receiver, and `scraper` is its own component class in contrib.",
+      "anchor": "region.scraper",
+      "source": { "path": "scraper/zookeeperscraper/metadata.yaml" },
+      "related": ["receiver", "metadata-yaml"]
+    },
+    {
+      "id": "consumer",
+      "term": "consumer",
+      "definition": "The interface a component implements to receive telemetry from the stage before it in a pipeline. Connectors are consumers of one pipeline and producers of another, which is what lets them bridge signals.",
+      "anchor": "view.pipeline",
+      "source": { "path": "processor/groupbytraceprocessor/README.md" },
+      "related": ["pipeline", "connector", "capability"]
+    },
+    {
+      "id": "signal",
+      "term": "signal",
+      "definition": "The kind of telemetry being carried: traces, metrics or logs (profiles are a fourth, still-emerging signal). Each component declares per-signal support, so it can be stable for one signal and alpha for another.",
+      "anchor": "view.pipeline",
+      "source": { "path": "README.md" },
+      "aliases": ["telemetry signal"],
+      "related": ["stability", "pipeline", "otlp"]
+    },
+    {
+      "id": "otlp",
+      "term": "OTLP",
+      "definition": "The OpenTelemetry Protocol — the wire format and transport used to exchange signals between collectors and between collectors and backends. Several contrib components encode, decode or relay OTLP payloads.",
+      "anchor": "view.pipeline",
+      "source": { "path": "extension/encoding/otlpencodingextension/README.md" },
+      "aliases": ["OpenTelemetry Protocol"],
+      "related": ["exporter", "signal"]
+    },
+    {
+      "id": "stability",
+      "term": "stability (development / alpha / beta / stable)",
+      "definition": "The maturity level of a component for a given signal, declared under `status.stability` in metadata.yaml. It sets user expectations and gates which distributions may ship the component; maintainers may downgrade components deemed unmaintained or risky.",
+      "anchor": "view.catalog",
+      "source": { "path": "README.md" },
+      "aliases": ["stability level", "alpha", "beta", "stable"],
+      "related": ["component-status", "distribution-membership", "signal"]
+    },
+    {
+      "id": "distribution",
+      "term": "distribution (core / contrib / k8s)",
+      "definition": "A shipped collector build. distributions.yaml lists the ones a component may belong to — core, contrib, k8s and otlp — and metadata.yaml records which of them actually include the component.",
+      "anchor": "region.distributions",
+      "source": { "path": "distributions.yaml" },
+      "aliases": ["otelcol distribution"],
+      "related": ["distribution-membership", "stability"]
+    },
+    {
+      "id": "distribution-membership",
+      "term": "distribution membership",
+      "definition": "Whether a component is compiled into a given distribution. Membership is declared in metadata.yaml, reflected in README status tables, and made real by listing the component in the distribution's builder config such as cmd/otelcontribcol/builder-config.yaml.",
+      "anchor": "region.builder-config",
+      "source": { "path": "cmd/otelcontribcol/builder-config.yaml" },
+      "related": ["distribution", "stability"]
+    },
+    {
+      "id": "confmap",
+      "term": "confmap",
+      "definition": "The configuration-mapping layer that loads collector YAML and resolves config URIs into typed Go configuration. Providers under confmap/ teach it new URI schemes, for example `s3://` bucket objects.",
+      "anchor": "region.confmap",
+      "source": { "path": "confmap/provider/s3provider/README.md" },
+      "aliases": ["config map", "config provider"],
+      "related": ["config-schema", "factory"]
+    },
+    {
+      "id": "factory",
+      "term": "factory",
+      "definition": "The source file that registers a component with the collector: it creates default configuration, exposes the component's type id and constructs the runtime instance. Every component follows the same config and factory layout.",
+      "anchor": "region.component-dir",
+      "source": { "path": "docs/new-components.md" },
+      "related": ["metadata-yaml", "capability", "confmap"]
+    },
+    {
+      "id": "mdatagen",
+      "term": "mdatagen",
+      "definition": "The metadata generator driven by a component's metadata.yaml: `make generate` / `make mdatagen` produces the README status section, documentation.md and the generated tests (for example generated_component_test.go). Repo-wide behaviour — test exclusions and stability coverage thresholds — is configured in .mdatagen.yaml.",
+      "anchor": "region.mdatagen-config",
+      "source": { "path": ".mdatagen.yaml" },
+      "aliases": ["metadata generator"],
+      "related": ["metadata-yaml", "goleak", "config-schema"]
+    },
+    {
+      "id": "metadata-yaml",
+      "term": "metadata.yaml",
+      "definition": "The machine-readable manifest at the root of every component directory: type, display name, description, status (class, stability, distributions, codeowners) and feature gates. It is the source of truth the atlas extracts components from.",
+      "anchor": "region.component-dir",
+      "source": { "path": "receiver/prometheusreceiver/metadata.yaml" },
+      "aliases": ["metadata", "component metadata"],
+      "related": ["mdatagen", "component-status", "factory"]
+    },
+    {
+      "id": "feature-gate",
+      "term": "feature gate",
+      "definition": "A runtime toggle that keeps unfinished or risky behaviour off the default code path until it is ready. Components declare their gates in metadata.yaml and users flip them with `--feature-gates`.",
+      "anchor": "view.catalog",
+      "source": { "path": "README.md" },
+      "aliases": ["feature gates", "gated feature"],
+      "related": ["stability", "metadata-yaml"]
+    },
+    {
+      "id": "capability",
+      "term": "capability",
+      "definition": "What a component declares it can handle — in contrib processors most often `consumer.Capabilities{MutatesData: true}`, which tells the collector the component may modify the telemetry it receives.",
+      "anchor": "region.component-dir",
+      "source": { "path": "processor/cumulativetodeltaprocessor/factory.go" },
+      "aliases": ["capabilities", "MutatesData"],
+      "related": ["consumer", "processor"]
+    },
+    {
+      "id": "codeowners",
+      "term": "CODEOWNERS",
+      "definition": "The generated .github/CODEOWNERS file mapping every component path to the people who maintain it. GitHub requests them as reviewers automatically, and metadata.yaml is where the active and emeritus lists are edited.",
+      "anchor": "region.codeowners",
+      "source": { "path": ".github/CODEOWNERS" },
+      "aliases": ["code owner"],
+      "related": ["metadata-yaml", "triager", "component-donation"]
+    },
+    {
+      "id": "chloggen",
+      "term": ".chloggen",
+      "definition": "The directory holding one YAML changelog entry per user-facing change. `make chlog-new` copies the template, `make chlog-validate` checks it, and at release time chloggen folds every entry into CHANGELOG.md or CHANGELOG-API.md and deletes it.",
+      "anchor": "region.chloggen",
+      "source": { "path": ".chloggen/README.md" },
+      "aliases": ["chloggen", "changelog entry"],
+      "related": ["pr-template", "module-level-targets"]
+    },
+    {
+      "id": "component-status",
+      "term": "component status vs stability",
+      "definition": "The `status` block of metadata.yaml describes what a component *is* — its class, distributions and code owners (including the `seeking_new` flag) — while stability describes how mature it is *per signal*: a receiver can declare beta stability for metrics while the logs it emits stay in development.",
+      "anchor": "region.component-dir",
+      "source": { "path": "receiver/prometheusreceiver/metadata.yaml" },
+      "related": ["stability", "metadata-yaml", "codeowners"]
+    },
+    {
+      "id": "testbed",
+      "term": "testbed",
+      "definition": "The controlled environment under testbed/ for end-to-end, correctness, stability and load tests of the collector: a load generator feeds data to the component under test while a mock backend receives and asserts on it.",
+      "anchor": "region.testbed",
+      "source": { "path": "testbed/README.md" },
+      "related": ["build-tags", "component-module"]
+    },
+    {
+      "id": "goleak",
+      "term": "goleak",
+      "definition": "The goroutine-leak checker wired into generated component tests. mdatagen adds it per component and .mdatagen.yaml records the components that are exempt from it.",
+      "anchor": "region.mdatagen-config",
+      "source": { "path": ".mdatagen.yaml" },
+      "related": ["mdatagen", "metadata-yaml"]
+    },
+    {
+      "id": "config-schema",
+      "term": "config schema",
+      "definition": "The machine-checkable description of a component's configuration, generated as config.schema.yaml next to the Go config struct so tooling can validate and document user configuration.",
+      "anchor": "region.component-dir",
+      "source": { "path": "receiver/prometheusreceiver/config.schema.yaml" },
+      "aliases": ["configuration schema"],
+      "related": ["confmap", "schemagen"]
+    },
+    {
+      "id": "schemagen",
+      "term": "schemagen",
+      "definition": "The generator that turns a component's Go configuration structs into its config.schema.yaml. The tool itself lives in the core collector (`go.opentelemetry.io/collector/cmd/schemagen`, invoked through `make schemagen`); .schemagen.yaml supplies the type mappings, allowed external refs and per-component overrides that steer it.",
+      "anchor": "region.schemagen-config",
+      "source": { "path": ".schemagen.yaml" },
+      "aliases": ["config schema generator"],
+      "related": ["config-schema", "mdatagen"]
+    },
+    {
+      "id": "component-module",
+      "term": "per-component Go module",
+      "definition": "Every component directory carries its own go.mod, so a custom build of the collector can pull in only the dependencies it needs. `make crosslink` keeps intra-repo `replace` directives in sync so the module resolves during development.",
+      "anchor": "region.component-dir",
+      "source": { "path": "docs/new-components.md" },
+      "aliases": ["go.mod"],
+      "related": ["crosslink", "module-level-targets"]
+    },
+    {
+      "id": "crosslink",
+      "term": "crosslink",
+      "definition": "The tool that inserts `replace` statements into the go.mod of every intra-repository dependent, which is what makes a new component resolvable when the contrib executable is built.",
+      "anchor": "region.makefile",
+      "source": { "path": "CONTRIBUTING.md" },
+      "related": ["component-module", "module-level-targets"]
+    },
+    {
+      "id": "build-tags",
+      "term": "build tags (integration / e2e)",
+      "definition": "Go build constraints that keep long-running tests out of the default test run. `integration` tests can run locally without credentials and are executed by CI; `e2e` tests are wired per component in .github/workflows.",
+      "anchor": "region.docs",
+      "source": { "path": "docs/testing.md" },
+      "aliases": ["build constraint"],
+      "related": ["testbed", "ci-scope"]
+    },
+    {
+      "id": "triager",
+      "term": "triager",
+      "definition": "A contributor with triager permissions who helps issues along: adding the missing component labels that organise issues and trigger the automations notifying code owners, investigating reports directly, or pointing issue authors at someone who can.",
+      "anchor": "region.issue-triaging",
+      "source": { "path": "issue-triaging.md" },
+      "related": ["issue-labels", "codeowners"]
+    },
+    {
+      "id": "issue-labels",
+      "term": "issue labels",
+      "definition": "The vocabulary issues are classified with — bug, enhancement, good first issue, help wanted, needs triage, waiting-for-codeowners and priority levels — documented in issue-triaging.md and applied by triagers or by automation.",
+      "anchor": "region.issue-triaging",
+      "source": { "path": "issue-triaging.md" },
+      "related": ["good-first-issue", "triager", "label-comment"]
+    },
+    {
+      "id": "label-comment",
+      "term": "/label comment",
+      "definition": "A comment starting with `/label` followed by space-separated label names that applies those labels to an issue or pull request, letting code owners manage labels without triager permissions. Prefix with `-` to remove one.",
+      "anchor": "region.contributing",
+      "source": { "path": "CONTRIBUTING.md" },
+      "related": ["issue-labels", "triager"]
+    },
+    {
+      "id": "good-first-issue",
+      "term": "good first issue",
+      "definition": "The label marking work that needs no specialised or in-depth knowledge of a component and is therefore ideal for a first-time contributor. Its neighbour `help wanted` marks issues whose code owners do not expect to have time for them soon.",
+      "anchor": "region.issue-triaging",
+      "source": { "path": "issue-triaging.md" },
+      "related": ["issue-labels", "component-donation"]
+    },
+    {
+      "id": "pr-template",
+      "term": "pull request template",
+      "definition": "The section structure every pull request inherits: description, link to tracking issue, testing, documentation and an authorship attestation that the human author must tick themselves.",
+      "anchor": "region.pr-template",
+      "source": { "path": ".github/pull_request_template.md" },
+      "related": ["pr-title", "chloggen"]
+    },
+    {
+      "id": "pr-title",
+      "term": "PR title convention",
+      "definition": "Pull request titles start with the component type and name in brackets followed by a short statement — for example `[processor/tailsampling] fix AND policy` — or read `as per changelog` when a changelog entry already describes the change.",
+      "anchor": "region.contributing",
+      "source": { "path": "CONTRIBUTING.md" },
+      "aliases": ["pull request title"],
+      "related": ["pr-template", "chloggen"]
+    },
+    {
+      "id": "facilitator",
+      "term": "facilitator",
+      "definition": "The maintainer or approver automatically assigned to help a pull request reach merge: keeping review moving, supplying the official approval when reviewers lack approval rights, and merging it as a maintainer. The `ready to merge` label is set only once an approver has approved.",
+      "anchor": "view.workflow",
+      "source": { "path": "README.md" },
+      "related": ["codeowners", "pr-template"]
+    },
+    {
+      "id": "ci-scope",
+      "term": "CI scope",
+      "definition": "The set of modules a pull request's CI actually runs. A script inspects the diff and emits either named test groups or bucketed module paths; the `ci:full` label forces the full matrix.",
+      "anchor": "region.github-workflows",
+      "source": { "path": ".github/workflows/scripts/compute-ci-scope.sh" },
+      "related": ["module-level-targets", "build-tags"]
+    },
+    {
+      "id": "component-donation",
+      "term": "component donation",
+      "definition": "The process of moving a component built outside this repository into contrib: open an issue with a sponsor and at least three code owners, agree the plan, then land it as a series of pull requests ending with alpha stability.",
+      "anchor": "region.docs",
+      "source": { "path": "docs/new-components.md" },
+      "aliases": ["sponsor"],
+      "related": ["codeowners", "stability", "metadata-yaml"]
+    },
+    {
+      "id": "module-level-targets",
+      "term": "repo-level vs module-level targets",
+      "definition": "Make targets are split so that module-level targets (in Makefile.Common) act on one Go module, while repo-level targets in the root Makefile wrap them across every module — `make lint` is scoped, `make golint` covers the whole repository.",
+      "anchor": "region.makefile",
+      "source": { "path": "CONTRIBUTING.md" },
+      "aliases": ["make targets"],
+      "related": ["crosslink", "ci-scope"]
+    }
+  ]
+}

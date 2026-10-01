@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "regions": [
+    {
+      "anchor": "region.confmap",
+      "title": "confmap — configuration mapping",
+      "narrative": "confmap owns how collector YAML becomes typed Go configuration: components receive a resolved confmap rather than raw bytes. Providers under confmap/provider teach the resolver new URI schemes — `s3://`, `aes://`, Google Secret Manager, AWS Secrets Manager — so a single config file can be assembled from remote sources at startup.",
+      "paths": ["confmap/provider/s3provider/README.md", "confmap/provider/"],
+      "commands": [],
+      "related_terms": ["confmap", "config-schema"],
+      "workflow_steps": []
+    },
+    {
+      "anchor": "region.internal",
+      "title": "internal — repository-private packages",
+      "narrative": "internal/ holds Go packages shared only inside this repository. pkg/README.md states the rule: if a module is used solely by contrib components it belongs here, to keep the public API footprint small. coreinternal, sharedcomponent, tidylist and the per-vendor helpers all follow that rule.",
+      "paths": ["pkg/README.md", "internal/coreinternal/"],
+      "commands": [],
+      "related_terms": ["component-module"],
+      "workflow_steps": []
+    },
+    {
+      "anchor": "region.pkg",
+      "title": "pkg — shared public modules",
+      "narrative": "pkg/ contains Go modules meant for external consumption: ottl, the transformation language behind the transform processor; stanza, the log parsing pipeline; golden and pdatatest helpers; sampling and translation utilities. The folder README warns that these are public API, so breaking changes follow the core contribution guidelines.",
+      "paths": ["pkg/README.md", "pkg/ottl/"],
+      "commands": [],
+      "related_terms": ["component-module", "crosslink"],
+      "workflow_steps": []
+    },
+    {
+      "anchor": "region.cmd",
+      "title": "cmd — binaries and generators",
+      "narrative": "cmd/ is where binaries are assembled: otelcontribcol (the contrib distribution), oteltestbedcol, telemetrygen, opampsupervisor, plus the codecovgen and githubgen generators. Which components each binary contains is declared in builder-config.yaml, which is why a new component is not shipped until it is added there.",
+      "paths": ["cmd/otelcontribcol/builder-config.yaml", "cmd/githubgen/"],
+      "commands": ["make otelcontribcol", "make genotelcontribcol"],
+      "related_terms": ["distribution-membership", "distribution"],
+      "workflow_steps": ["scaffold-component"]
+    },
+    {
+      "anchor": "region.config",
+      "title": "config — shared configuration packages",
+      "narrative": "config/ holds configuration packages that components import instead of reimplementing — today configdbauth, the database authentication options shared by SQL-backed components. It is the place to look when several components need the same auth, TLS or credential structure.",
+      "paths": ["config/configdbauth/"],
+      "commands": [],
+      "related_terms": ["confmap"],
+      "workflow_steps": []
+    },
+    {
+      "anchor": "region.testbed",
+      "title": "testbed — end-to-end and load harness",
+      "narrative": "testbed/ measures the collector rather than unit-testing it: a load generator produces telemetry, the collector under test processes it, and a mock backend receives and asserts on the results. Its correctness, stability and load suites are what the e2e and stability make targets drive.",
+      "paths": ["testbed/README.md"],
+      "commands": ["make e2e-test", "make stability-tests"],
+      "related_terms": ["testbed", "build-tags"],
+      "workflow_steps": ["write-tests"]
+    },
+    {
+      "anchor": "region.docs",
+      "title": "docs — contributor documentation",
+      "narrative": "docs/ is the contributor's manual. new-components.md walks through donating a component — sponsor, at least three code owners, metadata.yaml, the generator commands and the three-PR sequence (structure, implementation, Alpha) — testing.md covers build tags, release.md the release process, and templates.md holds ready-made PR text.",
+      "paths": ["docs/new-components.md", "docs/testing.md", "docs/release.md"],
+      "commands": [],
+      "related_terms": ["component-donation", "build-tags", "component-status"],
+      "workflow_steps": ["scaffold-component", "write-tests"]
+    },
+    {
+      "anchor": "region.chloggen",
+      "title": ".chloggen — changelog staging area",
+      "narrative": ".chloggen is where the changelog is written. Every user-facing change lands as one YAML entry created from TEMPLATE.yaml, validated by `make chlog-validate`, and folded into CHANGELOG.md (for users) or CHANGELOG-API.md (for package consumers) at release time before the entries are deleted.",
+      "paths": [".chloggen/README.md", ".chloggen/TEMPLATE.yaml"],
+      "commands": ["make chlog-new", "make chlog-validate"],
+      "related_terms": ["chloggen", "pr-title"],
+      "workflow_steps": ["add-changelog-entry"]
+    }
+  ]
+}
