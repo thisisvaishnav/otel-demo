@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "steps": [
+    {
+      "id": "find-an-issue",
+      "order": 1,
+      "title": "Find an issue to work on",
+      "summary": "Pick a task from the issue templates, favouring issues labelled `good first issue` or `help wanted`. Naming the component in the title (`[receiver/foo] …`) or in the template's Component(s) field makes a workflow apply that component's label and ping its code owners as soon as the issue is filed.",
+      "anchor": "region.issue-templates",
+      "file_anchor": ".github/ISSUE_TEMPLATE/"
+    },
+    {
+      "id": "understand-triage",
+      "order": 2,
+      "title": "Understand how issues are triaged",
+      "summary": "Read the triage process, the label definitions and the state diagram so you know what `needs triage`, `waiting-for-codeowners` and `help wanted` mean before you volunteer for the work.",
+      "anchor": "region.issue-triaging",
+      "file_anchor": "issue-triaging.md"
+    },
+    {
+      "id": "read-contributing",
+      "order": 3,
+      "title": "Read the contributing guide",
+      "summary": "CONTRIBUTING.md covers building and running the collector locally, linting and tests, changelog rules, PR titles, labels via comments, roles and the Makefile guidelines. Start here before writing any code.",
+      "anchor": "region.contributing",
+      "file_anchor": "CONTRIBUTING.md",
+      "command": "make otelcontribcol"
+    },
+    {
+      "id": "scaffold-component",
+      "order": 4,
+      "title": "Scaffold the component and its metadata",
+      "summary": "For a new component, create the directory with a metadata.yaml declaring type, class, stability and codeowners, a doc.go with the mdatagen generate pragma, and a README status stub — then run the generators that fill in the boilerplate.",
+      "anchor": "region.component-dir",
+      "file_anchor": "docs/new-components.md",
+      "command": "make generate"
+    },
+    {
+      "id": "write-tests",
+      "order": 5,
+      "title": "Add tests",
+      "summary": "Every change should ship with tests that actually validate it. Keep long-running suites behind the `integration` or `e2e` build tags so the default test run stays fast and credential-free.",
+      "anchor": "region.docs",
+      "file_anchor": "docs/testing.md",
+      "command": "make integration-test"
+    },
+    {
+      "id": "lint-and-test",
+      "order": 6,
+      "title": "Lint and run the test suite",
+      "summary": "Run the repo-level lint and test targets before opening the pull request. They wrap the module-level targets across every Go module, so one command covers the whole repository.",
+      "anchor": "region.makefile",
+      "file_anchor": "Makefile",
+      "command": "make golint gotest"
+    },
+    {
+      "id": "add-changelog-entry",
+      "order": 7,
+      "title": "Add a changelog entry",
+      "summary": "User-facing changes need a YAML entry in .chloggen. Create it from your branch name, fill in every field, then validate it — user-visible changes go to CHANGELOG.md and API changes to CHANGELOG-API.md.",
+      "anchor": "region.chloggen",
+      "file_anchor": ".chloggen/README.md",
+      "command": "make chlog-new"
+    },
+    {
+      "id": "open-pull-request",
+      "order": 8,
+      "title": "Open the pull request",
+      "summary": "Fill in every section of the PR template — description, link to tracking issue, testing, documentation and the authorship attestation — and title it `[component/type] short statement` so reviewers know at a glance what changed.",
+      "anchor": "region.pr-template",
+      "file_anchor": ".github/pull_request_template.md"
+    },
+    {
+      "id": "codeowner-review",
+      "order": 9,
+      "title": "Get code owner review and merge",
+      "summary": "CODEOWNERS maps each path to its maintainers, so reviewers are requested automatically and a facilitator is assigned. Address their comments; once an approver approves, the `ready to merge` label tells a maintainer the PR can land — and ownership changes need `make update-codeowners` first.",
+      "anchor": "region.codeowners",
+      "file_anchor": ".github/CODEOWNERS",
+      "command": "make update-codeowners"
+    }
+  ]
+}
