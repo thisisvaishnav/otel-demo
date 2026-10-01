@@ -1,7 +1,14 @@
-import type { Component } from "@otel-demo/schema";
+import type { Component, ModuleDep, RepoFilesData } from "@otel-demo/schema";
 import { describe, expect, it } from "vitest";
 import { stableStringify } from "./lib/json";
-import { MAX_FILE_BYTES, MAX_TOTAL_BYTES, sanityComponents, sanityFiles } from "./sanity";
+import {
+  MAX_FILE_BYTES,
+  MAX_TOTAL_BYTES,
+  MIN_MODULE_DEPS,
+  sanityComponents,
+  sanityFiles,
+  sanityRepo,
+} from "./sanity";
 
 function component(id: string, className: Component["class"] = "receiver"): Component {
   return {
@@ -89,5 +96,52 @@ describe("sanityFiles", () => {
       { name: "b.json", bytes: 20 },
     ]);
     expect(violations.some((violation) => violation.includes("data total"))).toBe(true);
+  });
+});
+
+function moduleDep(path: string): ModuleDep {
+  return {
+    path,
+    module: `example.com/${path === "" ? "root" : path}`,
+    requires: [],
+    components: [],
+  };
+}
+
+function moduledeps(): ModuleDep[] {
+  const out: ModuleDep[] = [moduleDep("")];
+  for (let index = 0; index < MIN_MODULE_DEPS; index += 1) {
+    out.push(moduleDep(`receiver/receiver${index}`));
+  }
+  return out;
+}
+
+function repofiles(): RepoFilesData {
+  return {
+    files: { Makefile: { kind: "file", headings: [], owners: ["@approvers"] } },
+    codeowners: [{ pattern: "*", owners: ["@approvers"] }],
+    distributions: [{ name: "contrib", url: "https://example.com/contrib" }],
+  };
+}
+
+describe("sanityRepo", () => {
+  it("accepts a populated repo snapshot", () => {
+    expect(sanityRepo(moduledeps(), repofiles())).toEqual([]);
+  });
+
+  it("rejects a module graph below the floor", () => {
+    const violations = sanityRepo(moduledeps().slice(0, 4), repofiles());
+    expect(violations.some((violation) => violation.includes("expected >= 10"))).toBe(true);
+  });
+
+  it("rejects duplicate module paths", () => {
+    const violations = sanityRepo([...moduledeps(), moduleDep("receiver/receiver0")], repofiles());
+    expect(violations.some((violation) => violation.includes("duplicate"))).toBe(true);
+  });
+
+  it("rejects empty owner and distribution lists", () => {
+    const empty = { ...repofiles(), codeowners: [], distributions: [] };
+    const violations = sanityRepo(moduledeps(), empty);
+    expect(violations).toHaveLength(2);
   });
 });
