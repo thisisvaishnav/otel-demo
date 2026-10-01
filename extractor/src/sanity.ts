@@ -1,7 +1,8 @@
-import type { Component, ComponentClass } from "@otel-demo/schema";
+import type { Component, ComponentClass, ModuleDep, RepoFilesData } from "@otel-demo/schema";
 import { CLASS_NAMES } from "@otel-demo/schema";
 
 export const MIN_COMPONENTS = 200;
+export const MIN_MODULE_DEPS = 10;
 export const MIN_PER_CLASS: Record<ComponentClass, number> = {
   receiver: 5,
   processor: 5,
@@ -49,6 +50,25 @@ export function sanityFiles(files: FileInfo[]): string[] {
   }
   if (total >= MAX_TOTAL_BYTES) {
     violations.push(`data total is ${total} bytes (budget ${MAX_TOTAL_BYTES})`);
+  }
+  return violations;
+}
+
+export function sanityRepo(moduledeps: ModuleDep[], repofiles: RepoFilesData): string[] {
+  const violations: string[] = [];
+  if (moduledeps.length < MIN_MODULE_DEPS) {
+    violations.push(`expected >= ${MIN_MODULE_DEPS} module deps, got ${moduledeps.length}`);
+  }
+  const seen = new Set<string>();
+  for (const dep of moduledeps) {
+    if (seen.has(dep.path)) violations.push(`duplicate module path "${dep.path}"`);
+    seen.add(dep.path);
+  }
+  if (repofiles.codeowners.length === 0) {
+    violations.push("expected a non-empty CODEOWNERS rule list");
+  }
+  if (repofiles.distributions.length === 0) {
+    violations.push("expected at least one distribution in distributions.yaml");
   }
   return violations;
 }

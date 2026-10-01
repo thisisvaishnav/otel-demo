@@ -13,6 +13,15 @@ export const SPARSE_PATHS = [
   "scraper",
   ".github",
   "docs",
+  ".chloggen",
+  "confmap",
+  "internal",
+  "pkg",
+  "cmd",
+  "config",
+  "testbed",
+  "examples",
+  "reports",
 ];
 
 function git(args: string[], cwd?: string): string {
@@ -24,7 +33,7 @@ export function ensureClone(cacheDir: string): { dir: string; sha: string } {
   if (!existsSync(join(dir, ".git"))) {
     mkdirSync(cacheDir, { recursive: true });
     git(["clone", "--depth", "1", "--filter=blob:none", "--sparse", REPO_URL, dir]);
-    git(["sparse-checkout", "set", ...SPARSE_PATHS], dir);
   }
+  git(["sparse-checkout", "set", ...SPARSE_PATHS], dir);
   return { dir, sha: git(["rev-parse", "HEAD"], dir) };
 }

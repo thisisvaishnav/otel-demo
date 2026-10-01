@@ -1,0 +1,3707 @@
+[
+  {
+    "components": [
+      "extension/internal",
+      "extension/tailstorage"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib",
+    "path": "",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/codecovgen",
+    "path": "cmd/codecovgen",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/golden",
+    "path": "cmd/golden",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/opampsupervisor",
+    "path": "cmd/opampsupervisor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/basicauthextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/bearertokenauthextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/basicauth",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/credentialsfile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/oauth2clientauthextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/testbed"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen",
+    "path": "cmd/telemetrygen",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen/internal/e2etest",
+    "path": "cmd/telemetrygen/internal/e2etest",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/config/configdbauth",
+    "path": "config/configdbauth",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/dbauth"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/aesprovider",
+    "path": "confmap/provider/aesprovider",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/googlesecretmanagerprovider",
+    "path": "confmap/provider/googlesecretmanagerprovider",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/s3provider",
+    "path": "confmap/provider/s3provider",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/secretsmanagerprovider",
+    "path": "confmap/provider/secretsmanagerprovider",
+    "requires": []
+  },
+  {
+    "components": [
+      "connector/countconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/countconnector",
+    "path": "connector/countconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "connector/datadogconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/datadogconnector",
+    "path": "connector/datadogconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor"
+    ]
+  },
+  {
+    "components": [
+      "connector/exceptionsconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/exceptionsconnector",
+    "path": "connector/exceptionsconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "connector/failoverconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/failoverconnector",
+    "path": "connector/failoverconnector",
+    "requires": []
+  },
+  {
+    "components": [
+      "connector/grafanacloudconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/grafanacloudconnector",
+    "path": "connector/grafanacloudconnector",
+    "requires": []
+  },
+  {
+    "components": [
+      "connector/metricsaslogsconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/metricsaslogsconnector",
+    "path": "connector/metricsaslogsconnector",
+    "requires": []
+  },
+  {
+    "components": [
+      "connector/otlpjsonconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/otlpjsonconnector",
+    "path": "connector/otlpjsonconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "connector/roundrobinconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/roundrobinconnector",
+    "path": "connector/roundrobinconnector",
+    "requires": []
+  },
+  {
+    "components": [
+      "connector/routingconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/routingconnector",
+    "path": "connector/routingconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "connector/servicegraphconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/servicegraphconnector",
+    "path": "connector/servicegraphconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "connector/signaltometricsconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/signaltometricsconnector",
+    "path": "connector/signaltometricsconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [
+      "connector/slowsqlconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/slowsqlconnector",
+    "path": "connector/slowsqlconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil"
+    ]
+  },
+  {
+    "components": [
+      "connector/spanmetricsconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/spanmetricsconnector",
+    "path": "connector/spanmetricsconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [
+      "connector/sumconnector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/sumconnector",
+    "path": "connector/sumconnector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "exporter/alertmanagerexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/alertmanagerexporter",
+    "path": "exporter/alertmanagerexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "exporter/alibabacloudlogserviceexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/alibabacloudlogserviceexporter",
+    "path": "exporter/alibabacloudlogserviceexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/awscloudwatchlogsexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter",
+    "path": "exporter/awscloudwatchlogsexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs"
+    ]
+  },
+  {
+    "components": [
+      "exporter/awsemfexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter",
+    "path": "exporter/awsemfexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry"
+    ]
+  },
+  {
+    "components": [
+      "exporter/awskinesisexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awskinesisexporter",
+    "path": "exporter/awskinesisexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin"
+    ]
+  },
+  {
+    "components": [
+      "exporter/awss3exporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awss3exporter",
+    "path": "exporter/awss3exporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchperresourceattr"
+    ]
+  },
+  {
+    "components": [
+      "exporter/awsxrayexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter",
+    "path": "exporter/awsxrayexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/azureblobexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/azureblobexporter",
+    "path": "exporter/azureblobexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/azuredataexplorerexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/azuredataexplorerexporter",
+    "path": "exporter/azuredataexplorerexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/azuremonitorexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/azuremonitorexporter",
+    "path": "exporter/azuremonitorexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "exporter/bmchelixexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/bmchelixexporter",
+    "path": "exporter/bmchelixexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/cassandraexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/cassandraexporter",
+    "path": "exporter/cassandraexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/clickhouseexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/clickhouseexporter",
+    "path": "exporter/clickhouseexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/coralogixexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/coralogixexporter",
+    "path": "exporter/coralogixexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "exporter/datadogexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter",
+    "path": "exporter/datadogexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter/integrationtest",
+    "path": "exporter/datadogexporter/integrationtest",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/connector/datadogconnector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/gopsutilenv",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver"
+    ]
+  },
+  {
+    "components": [
+      "exporter/datasetexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datasetexporter",
+    "path": "exporter/datasetexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/dorisexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/dorisexporter",
+    "path": "exporter/dorisexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/elasticsearchexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/elasticsearchexporter",
+    "path": "exporter/elasticsearchexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/elasticsearchexporter/integrationtest",
+    "path": "exporter/elasticsearchexporter/integrationtest",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/elasticsearchexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage/filestorage",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/testbed"
+    ]
+  },
+  {
+    "components": [
+      "exporter/faroexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/faroexporter",
+    "path": "exporter/faroexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/faro"
+    ]
+  },
+  {
+    "components": [
+      "exporter/fileexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter",
+    "path": "exporter/fileexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/otlpencodingextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "exporter/googlecloudexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudexporter",
+    "path": "exporter/googlecloudexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/googlecloudpubsubexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudpubsubexporter",
+    "path": "exporter/googlecloudpubsubexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding"
+    ]
+  },
+  {
+    "components": [
+      "exporter/googlecloudstorageexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlecloudstorageexporter",
+    "path": "exporter/googlecloudstorageexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/googlemanagedprometheusexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/googlemanagedprometheusexporter",
+    "path": "exporter/googlemanagedprometheusexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/honeycombmarkerexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/honeycombmarkerexporter",
+    "path": "exporter/honeycombmarkerexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl"
+    ]
+  },
+  {
+    "components": [
+      "exporter/influxdbexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/influxdbexporter",
+    "path": "exporter/influxdbexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/kafkaexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter",
+    "path": "exporter/kafkaexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchpersignal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/kafka/configkafka",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/kafka/topic",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin"
+    ]
+  },
+  {
+    "components": [
+      "exporter/loadbalancingexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/loadbalancingexporter",
+    "path": "exporter/loadbalancingexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchpersignal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [
+      "exporter/logicmonitorexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/logicmonitorexporter",
+    "path": "exporter/logicmonitorexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry"
+    ]
+  },
+  {
+    "components": [
+      "exporter/logzioexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/logzioexporter",
+    "path": "exporter/logzioexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/natsexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/natsexporter",
+    "path": "exporter/natsexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/opensearchexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/opensearchexporter",
+    "path": "exporter/opensearchexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden"
+    ]
+  },
+  {
+    "components": [
+      "exporter/otelarrowexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/otelarrowexporter",
+    "path": "exporter/otelarrowexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/grpcutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/otelarrow"
+    ]
+  },
+  {
+    "components": [
+      "exporter/prometheusexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusexporter",
+    "path": "exporter/prometheusexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver"
+    ]
+  },
+  {
+    "components": [
+      "exporter/prometheusremotewriteexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter",
+    "path": "exporter/prometheusremotewriteexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheusremotewrite"
+    ]
+  },
+  {
+    "components": [
+      "exporter/pulsarexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/pulsarexporter",
+    "path": "exporter/pulsarexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger"
+    ]
+  },
+  {
+    "components": [
+      "exporter/rabbitmqexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/rabbitmqexporter",
+    "path": "exporter/rabbitmqexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/rabbitmq"
+    ]
+  },
+  {
+    "components": [
+      "exporter/sematextexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/sematextexporter",
+    "path": "exporter/sematextexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/sentryexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/sentryexporter",
+    "path": "exporter/sentryexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "exporter/signalfxexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/signalfxexporter",
+    "path": "exporter/signalfxexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/gopsutilenv",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchperresourceattr",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/signalfx"
+    ]
+  },
+  {
+    "components": [
+      "exporter/splunkhecexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/splunkhecexporter",
+    "path": "exporter/splunkhecexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchperresourceattr",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/pprof",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/splunk"
+    ]
+  },
+  {
+    "components": [
+      "exporter/stefexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/stefexporter",
+    "path": "exporter/stefexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "exporter/sumologicexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/sumologicexporter",
+    "path": "exporter/sumologicexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicextension"
+    ]
+  },
+  {
+    "components": [
+      "exporter/syslogexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/syslogexporter",
+    "path": "exporter/syslogexporter",
+    "requires": []
+  },
+  {
+    "components": [
+      "exporter/tencentcloudlogserviceexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/tencentcloudlogserviceexporter",
+    "path": "exporter/tencentcloudlogserviceexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/tinybirdexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/tinybirdexporter",
+    "path": "exporter/tinybirdexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "exporter/zipkinexporter"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/zipkinexporter",
+    "path": "exporter/zipkinexporter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver"
+    ]
+  },
+  {
+    "components": [
+      "extension/ackextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension",
+    "path": "extension/ackextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/asapauthextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/asapauthextension",
+    "path": "extension/asapauthextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/awsproxy"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/awsproxy",
+    "path": "extension/awsproxy",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/proxy",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "extension/azureauthextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/azureauthextension",
+    "path": "extension/azureauthextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/basicauthextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/basicauthextension",
+    "path": "extension/basicauthextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/basicauth",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/credentialsfile"
+    ]
+  },
+  {
+    "components": [
+      "extension/bearertokenauthextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/bearertokenauthextension",
+    "path": "extension/bearertokenauthextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/credentialsfile"
+    ]
+  },
+  {
+    "components": [
+      "extension/cgroupruntimeextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/cgroupruntimeextension",
+    "path": "extension/cgroupruntimeextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/datadogextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/datadogextension",
+    "path": "extension/datadogextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog"
+    ]
+  },
+  {
+    "components": [
+      "extension/dbauth"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/dbauth",
+    "path": "extension/dbauth",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/dbauth/awsiamdbauthextension",
+    "path": "extension/dbauth/awsiamdbauthextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/dbauth"
+    ]
+  },
+  {
+    "components": [
+      "extension/encoding"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+    "path": "extension/encoding",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/avrologencodingextension",
+    "path": "extension/encoding/avrologencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/awscloudwatchmetricstreamsencodingextension",
+    "path": "extension/encoding/awscloudwatchmetricstreamsencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xstreamencoding"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/awslogsencodingextension",
+    "path": "extension/encoding/awslogsencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xstreamencoding"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/azureencodingextension",
+    "path": "extension/encoding/azureencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/googlecloudlogentryencodingextension",
+    "path": "extension/encoding/googlecloudlogentryencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jaegerencodingextension",
+    "path": "extension/encoding/jaegerencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/jsonlogencodingextension",
+    "path": "extension/encoding/jsonlogencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/otlpencodingextension",
+    "path": "extension/encoding/otlpencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/skywalkingencodingextension",
+    "path": "extension/encoding/skywalkingencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/skywalking"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/textencodingextension",
+    "path": "extension/encoding/textencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xstreamencoding"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/zipkinencodingextension",
+    "path": "extension/encoding/zipkinencodingextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin"
+    ]
+  },
+  {
+    "components": [
+      "extension/filetelemetrypolicyextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/filetelemetrypolicyextension",
+    "path": "extension/filetelemetrypolicyextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/googleclientauthextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/googleclientauthextension",
+    "path": "extension/googleclientauthextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/headerssetterextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/headerssetterextension",
+    "path": "extension/headerssetterextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/credentialsfile"
+    ]
+  },
+  {
+    "components": [
+      "extension/healthcheckextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension",
+    "path": "extension/healthcheckextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/healthcheck",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/status"
+    ]
+  },
+  {
+    "components": [
+      "extension/healthcheckv2extension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckv2extension",
+    "path": "extension/healthcheckv2extension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/healthcheck",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/status"
+    ]
+  },
+  {
+    "components": [
+      "extension/httpforwarderextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/httpforwarderextension",
+    "path": "extension/httpforwarderextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/basicauth",
+    "path": "extension/internal/basicauth",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/credentialsfile",
+    "path": "extension/internal/credentialsfile",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/jaegerremotesampling"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/jaegerremotesampling",
+    "path": "extension/jaegerremotesampling",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "extension/k8sleaderelector"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/k8sleaderelector",
+    "path": "extension/k8sleaderelector",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig"
+    ]
+  },
+  {
+    "components": [
+      "extension/mcp"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/mcp",
+    "path": "extension/mcp",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/oauth2clientauthextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/oauth2clientauthextension",
+    "path": "extension/oauth2clientauthextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/observer"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer",
+    "path": "extension/observer",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer/cfgardenobserver",
+    "path": "extension/observer/cfgardenobserver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer/dockerobserver",
+    "path": "extension/observer/dockerobserver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer/ecsobserver",
+    "path": "extension/observer/ecsobserver",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer/hostobserver",
+    "path": "extension/observer/hostobserver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer/k8sobserver",
+    "path": "extension/observer/k8sobserver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest"
+    ]
+  },
+  {
+    "components": [
+      "extension/oidcauthextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/oidcauthextension",
+    "path": "extension/oidcauthextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/opampcustommessages"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/opampcustommessages",
+    "path": "extension/opampcustommessages",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/opampextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/opampextension",
+    "path": "extension/opampextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/opampcustommessages",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/status"
+    ]
+  },
+  {
+    "components": [
+      "extension/pprofextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/pprofextension",
+    "path": "extension/pprofextension",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "extension/remotetapextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/remotetapextension",
+    "path": "extension/remotetapextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/sdnotifyextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/sdnotifyextension",
+    "path": "extension/sdnotifyextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/sigv4authextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/sigv4authextension",
+    "path": "extension/sigv4authextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/solarwindsapmsettingsextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/solarwindsapmsettingsextension",
+    "path": "extension/solarwindsapmsettingsextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/storage"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+    "path": "extension/storage",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage/dbstorage",
+    "path": "extension/storage/dbstorage",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage/filestorage",
+    "path": "extension/storage/filestorage",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage/redisstorageextension",
+    "path": "extension/storage/redisstorageextension",
+    "requires": []
+  },
+  {
+    "components": [
+      "extension/sumologicextension"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicextension",
+    "path": "extension/sumologicextension",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/tailstorage/pebbletailstorageextension",
+    "path": "extension/tailstorage/pebbletailstorageextension",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/tailstorage/pebbletailstorageextension/integrationtest",
+    "path": "extension/tailstorage/pebbletailstorageextension/integrationtest",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/tailstorage/pebbletailstorageextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+    "path": "internal/aws/awsutil",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/containerinsight",
+    "path": "internal/aws/containerinsight",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs",
+    "path": "internal/aws/cwlogs",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+    "path": "internal/aws/ecsutil",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/k8s",
+    "path": "internal/aws/k8s",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/metrics",
+    "path": "internal/aws/metrics",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/proxy",
+    "path": "internal/aws/proxy",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray",
+    "path": "internal/aws/xray",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray/testdata/sampleapp",
+    "path": "internal/aws/xray/testdata/sampleapp",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray/testdata/sampleserver",
+    "path": "internal/aws/xray/testdata/sampleserver",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/collectd",
+    "path": "internal/collectd",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+    "path": "internal/common",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+    "path": "internal/coreinternal",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+    "path": "internal/datadog",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog/e2e",
+    "path": "internal/datadog/e2e",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/connector/datadogconnector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/gopsutilenv",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/expohisto",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/k8sattributesprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/probabilisticsamplerprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourcedetectionprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/dockerstatsreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filelogreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker",
+    "path": "internal/docker",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+    "path": "internal/exp/metrics",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+    "path": "internal/filter",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/gopsutilenv",
+    "path": "internal/gopsutilenv",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/grpcutil",
+    "path": "internal/grpcutil",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/healthcheck",
+    "path": "internal/healthcheck",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/status"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+    "path": "internal/k8sconfig",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sinventory",
+    "path": "internal/k8sinventory",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sleaderelectortest",
+    "path": "internal/k8sleaderelectortest",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/k8sleaderelector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka",
+    "path": "internal/kafka",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/kafka/configkafka"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/kubelet",
+    "path": "internal/kubelet",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+    "path": "internal/metadataproviders",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/otelarrow",
+    "path": "internal/otelarrow",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/otelarrowexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/grpcutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/otelarrowreceiver"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+    "path": "internal/pdatautil",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/rabbitmq",
+    "path": "internal/rabbitmq",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+    "path": "internal/sharedcomponent",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk",
+    "path": "internal/splunk",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sqlquery",
+    "path": "internal/sqlquery",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/internal/tools",
+    "path": "internal/tools",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchperresourceattr",
+    "path": "pkg/batchperresourceattr",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchpersignal",
+    "path": "pkg/batchpersignal",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+    "path": "pkg/core/xidutils",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog",
+    "path": "pkg/datadog",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+    "path": "pkg/experimentalmetricmetadata",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/expohisto",
+    "path": "pkg/expohisto",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+    "path": "pkg/golden",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/kafka/configkafka",
+    "path": "pkg/kafka/configkafka",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/kafka/topic",
+    "path": "pkg/kafka/topic",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+    "path": "pkg/ottl",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+    "path": "pkg/ottl/contexts/xprofile",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+    "path": "pkg/ottl/xottl",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+    "path": "pkg/pdatatest",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+    "path": "pkg/resourcetotelemetry",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling",
+    "path": "pkg/sampling",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/semconvtest",
+    "path": "pkg/semconvtest",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza",
+    "path": "pkg/stanza",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/semconvtest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/status",
+    "path": "pkg/status",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/azure",
+    "path": "pkg/translator/azure",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/azurelogs",
+    "path": "pkg/translator/azurelogs",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/faro",
+    "path": "pkg/translator/faro",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger",
+    "path": "pkg/translator/jaeger",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki",
+    "path": "pkg/translator/loki",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/pprof",
+    "path": "pkg/translator/pprof",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+    "path": "pkg/translator/prometheus",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheusremotewrite",
+    "path": "pkg/translator/prometheusremotewrite",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/signalfx",
+    "path": "pkg/translator/signalfx",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/skywalking",
+    "path": "pkg/translator/skywalking",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/splunk",
+    "path": "pkg/translator/splunk",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin",
+    "path": "pkg/translator/zipkin",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters",
+    "path": "pkg/winperfcounters",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest",
+    "path": "pkg/xk8stest",
+    "requires": []
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xstreamencoding",
+    "path": "pkg/xstreamencoding",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding"
+    ]
+  },
+  {
+    "components": [
+      "processor/adaptivetailsamplingprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/adaptivetailsamplingprocessor",
+    "path": "processor/adaptivetailsamplingprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [
+      "processor/attributesprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/attributesprocessor",
+    "path": "processor/attributesprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/awsecsattributesprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/awsecsattributesprocessor",
+    "path": "processor/awsecsattributesprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/cardinalityguardianprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/cardinalityguardianprocessor",
+    "path": "processor/cardinalityguardianprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/coralogixprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/coralogixprocessor",
+    "path": "processor/coralogixprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/cumulativetodeltaprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/cumulativetodeltaprocessor",
+    "path": "processor/cumulativetodeltaprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/deltatocumulativeprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor",
+    "path": "processor/deltatocumulativeprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics"
+    ]
+  },
+  {
+    "components": [
+      "processor/deltatorateprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatorateprocessor",
+    "path": "processor/deltatorateprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/drainprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/drainprocessor",
+    "path": "processor/drainprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage"
+    ]
+  },
+  {
+    "components": [
+      "processor/filterprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor",
+    "path": "processor/filterprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/genainormalizerprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/genainormalizerprocessor",
+    "path": "processor/genainormalizerprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/geoipprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/geoipprocessor",
+    "path": "processor/geoipprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/groupbyattrsprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/groupbyattrsprocessor",
+    "path": "processor/groupbyattrsprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/groupbytraceprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/groupbytraceprocessor",
+    "path": "processor/groupbytraceprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchpersignal"
+    ]
+  },
+  {
+    "components": [
+      "processor/intervalprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/intervalprocessor",
+    "path": "processor/intervalprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/isolationforestprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/isolationforestprocessor",
+    "path": "processor/isolationforestprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/k8sattributesprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/k8sattributesprocessor",
+    "path": "processor/k8sattributesprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/semconvtest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest"
+    ]
+  },
+  {
+    "components": [
+      "processor/logdedupprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/logdedupprocessor",
+    "path": "processor/logdedupprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/logstransformprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/logstransformprocessor",
+    "path": "processor/logstransformprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "processor/lookupprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/lookupprocessor",
+    "path": "processor/lookupprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl"
+    ]
+  },
+  {
+    "components": [
+      "processor/metricsgenerationprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricsgenerationprocessor",
+    "path": "processor/metricsgenerationprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/metricstarttimeprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricstarttimeprocessor",
+    "path": "processor/metricstarttimeprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/metricstransformprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricstransformprocessor",
+    "path": "processor/metricstransformprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/probabilisticsamplerprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/probabilisticsamplerprocessor",
+    "path": "processor/probabilisticsamplerprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [
+      "processor/redactionprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/redactionprocessor",
+    "path": "processor/redactionprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/remotetapprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/remotetapprocessor",
+    "path": "processor/remotetapprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "processor/resourcedetectionprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourcedetectionprocessor",
+    "path": "processor/resourcedetectionprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/metadataproviders",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest"
+    ]
+  },
+  {
+    "components": [
+      "processor/resourceprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourceprocessor",
+    "path": "processor/resourceprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/rollingspanlatencyprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/rollingspanlatencyprocessor",
+    "path": "processor/rollingspanlatencyprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/schemaprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/schemaprocessor",
+    "path": "processor/schemaprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/signingprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/signingprocessor",
+    "path": "processor/signingprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/spanprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/spanprocessor",
+    "path": "processor/spanprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/spanpruningprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/spanpruningprocessor",
+    "path": "processor/spanpruningprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [
+      "processor/sumologicprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/sumologicprocessor",
+    "path": "processor/sumologicprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/tailsamplingprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor",
+    "path": "processor/tailsamplingprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling"
+    ]
+  },
+  {
+    "components": [
+      "processor/telemetrypolicyprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/telemetrypolicyprocessor",
+    "path": "processor/telemetrypolicyprocessor",
+    "requires": []
+  },
+  {
+    "components": [
+      "processor/transformprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor",
+    "path": "processor/transformprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/expohisto",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "processor/unrollprocessor"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/unrollprocessor",
+    "path": "processor/unrollprocessor",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/activedirectorydsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/activedirectorydsreceiver",
+    "path": "receiver/activedirectorydsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters"
+    ]
+  },
+  {
+    "components": [
+      "receiver/activedirectoryinvreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/activedirectoryinvreceiver",
+    "path": "receiver/activedirectoryinvreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/aerospikereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/aerospikereceiver",
+    "path": "receiver/aerospikereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/apachereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/apachereceiver",
+    "path": "receiver/apachereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/apachesparkreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/apachesparkreceiver",
+    "path": "receiver/apachesparkreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/awscloudwatchreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awscloudwatchreceiver",
+    "path": "receiver/awscloudwatchreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/awscontainerinsightreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awscontainerinsightreceiver",
+    "path": "receiver/awscontainerinsightreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/containerinsight",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/k8s",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/kubelet"
+    ]
+  },
+  {
+    "components": [
+      "receiver/awsecscontainermetricsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsecscontainermetricsreceiver",
+    "path": "receiver/awsecscontainermetricsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "receiver/awsfirehosereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsfirehosereceiver",
+    "path": "receiver/awsfirehosereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding/awscloudwatchmetricstreamsencodingextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xstreamencoding"
+    ]
+  },
+  {
+    "components": [
+      "receiver/awslambdareceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awslambdareceiver",
+    "path": "receiver/awslambdareceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xstreamencoding"
+    ]
+  },
+  {
+    "components": [
+      "receiver/awss3receiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awss3receiver",
+    "path": "receiver/awss3receiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/opampcustommessages"
+    ]
+  },
+  {
+    "components": [
+      "receiver/awsxrayreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsxrayreceiver",
+    "path": "receiver/awsxrayreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/proxy",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/azureblobreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azureblobreceiver",
+    "path": "receiver/azureblobreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "receiver/azureeventhubreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azureeventhubreceiver",
+    "path": "receiver/azureeventhubreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/azure",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/azurelogs"
+    ]
+  },
+  {
+    "components": [
+      "receiver/azurefunctionsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azurefunctionsreceiver",
+    "path": "receiver/azurefunctionsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "receiver/azuremonitorreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azuremonitorreceiver",
+    "path": "receiver/azuremonitorreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/carbonreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/carbonreceiver",
+    "path": "receiver/carbonreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "receiver/chronyreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/chronyreceiver",
+    "path": "receiver/chronyreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/ciscoosreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/ciscoosreceiver",
+    "path": "receiver/ciscoosreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/cloudflarereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/cloudflarereceiver",
+    "path": "receiver/cloudflarereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/cloudfoundryreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/cloudfoundryreceiver",
+    "path": "receiver/cloudfoundryreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/collectdreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/collectdreceiver",
+    "path": "receiver/collectdreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/collectd",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/couchdbreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/couchdbreceiver",
+    "path": "receiver/couchdbreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/datadogreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/datadogreceiver",
+    "path": "receiver/datadogreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/dnscheckreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/dnscheckreceiver",
+    "path": "receiver/dnscheckreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/dockerstatsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/dockerstatsreceiver",
+    "path": "receiver/dockerstatsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/elasticsearchreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/elasticsearchreceiver",
+    "path": "receiver/elasticsearchreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/envoyalsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/envoyalsreceiver",
+    "path": "receiver/envoyalsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/expvarreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/expvarreceiver",
+    "path": "receiver/expvarreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/faroreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/faroreceiver",
+    "path": "receiver/faroreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/faro"
+    ]
+  },
+  {
+    "components": [
+      "receiver/filelogreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filelogreceiver",
+    "path": "receiver/filelogreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/filestatsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filestatsreceiver",
+    "path": "receiver/filestatsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/flinkmetricsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/flinkmetricsreceiver",
+    "path": "receiver/flinkmetricsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/fluentforwardreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/fluentforwardreceiver",
+    "path": "receiver/fluentforwardreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/githubreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/githubreceiver",
+    "path": "receiver/githubreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/gitlabreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/gitlabreceiver",
+    "path": "receiver/gitlabreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/googlecloudmonitoringreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudmonitoringreceiver",
+    "path": "receiver/googlecloudmonitoringreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/googlecloudpubsubpushreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudpubsubpushreceiver",
+    "path": "receiver/googlecloudpubsubpushreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding"
+    ]
+  },
+  {
+    "components": [
+      "receiver/googlecloudpubsubreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudpubsubreceiver",
+    "path": "receiver/googlecloudpubsubreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/encoding"
+    ]
+  },
+  {
+    "components": [
+      "receiver/googlecloudspannerreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudspannerreceiver",
+    "path": "receiver/googlecloudspannerreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/haproxyreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/haproxyreceiver",
+    "path": "receiver/haproxyreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/hostmetricsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver",
+    "path": "receiver/hostmetricsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/filter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/gopsutilenv",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters"
+    ]
+  },
+  {
+    "components": [
+      "receiver/httpcheckreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",
+    "path": "receiver/httpcheckreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/huaweicloudcesreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/huaweicloudcesreceiver",
+    "path": "receiver/huaweicloudcesreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/icmpcheckreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/icmpcheckreceiver",
+    "path": "receiver/icmpcheckreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/iisreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/iisreceiver",
+    "path": "receiver/iisreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters"
+    ]
+  },
+  {
+    "components": [
+      "receiver/influxdbreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/influxdbreceiver",
+    "path": "receiver/influxdbreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatautil"
+    ]
+  },
+  {
+    "components": [
+      "receiver/jaegerreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver",
+    "path": "receiver/jaegerreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger"
+    ]
+  },
+  {
+    "components": [
+      "receiver/journaldreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/journaldreceiver",
+    "path": "receiver/journaldreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/k8sclusterreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sclusterreceiver",
+    "path": "receiver/k8sclusterreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/k8sleaderelector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sleaderelectortest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/k8seventsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8seventsreceiver",
+    "path": "receiver/k8seventsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/k8sleaderelector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sinventory",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sleaderelectortest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/k8sobjectsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sobjectsreceiver",
+    "path": "receiver/k8sobjectsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/k8sleaderelector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sinventory",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sleaderelectortest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/kafkametricsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkametricsreceiver",
+    "path": "receiver/kafkametricsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/kafka/configkafka"
+    ]
+  },
+  {
+    "components": [
+      "receiver/kafkareceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkareceiver",
+    "path": "receiver/kafkareceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/kafka/configkafka",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/azure",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin"
+    ]
+  },
+  {
+    "components": [
+      "receiver/kubeletstatsreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kubeletstatsreceiver",
+    "path": "receiver/kubeletstatsreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/kubelet",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/xk8stest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/libhoneyreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/libhoneyreceiver",
+    "path": "receiver/libhoneyreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "receiver/lokireceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/lokireceiver",
+    "path": "receiver/lokireceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki"
+    ]
+  },
+  {
+    "components": [
+      "receiver/macosunifiedloggingreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/macosunifiedloggingreceiver",
+    "path": "receiver/macosunifiedloggingreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/memcachedreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/memcachedreceiver",
+    "path": "receiver/memcachedreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/mongodbatlasreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mongodbatlasreceiver",
+    "path": "receiver/mongodbatlasreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/mongodbreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mongodbreceiver",
+    "path": "receiver/mongodbreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/mysqlreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mysqlreceiver",
+    "path": "receiver/mysqlreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/config/configdbauth",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/dbauth",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/namedpipereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/namedpipereceiver",
+    "path": "receiver/namedpipereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/netflowreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/netflowreceiver",
+    "path": "receiver/netflowreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/nginxreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/nginxreceiver",
+    "path": "receiver/nginxreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/nsxtreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/nsxtreceiver",
+    "path": "receiver/nsxtreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/ntpreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/ntpreceiver",
+    "path": "receiver/ntpreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/oracledbreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/oracledbreceiver",
+    "path": "receiver/oracledbreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/osqueryreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/osqueryreceiver",
+    "path": "receiver/osqueryreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/otelarrowreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/otelarrowreceiver",
+    "path": "receiver/otelarrowreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/grpcutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/otelarrow",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent"
+    ]
+  },
+  {
+    "components": [
+      "receiver/otlpjsonfilereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/otlpjsonfilereceiver",
+    "path": "receiver/otlpjsonfilereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/podmanreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/podmanreceiver",
+    "path": "receiver/podmanreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/postgresqlreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/postgresqlreceiver",
+    "path": "receiver/postgresqlreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/config/configdbauth",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/dbauth",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sqlquery",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/pprofreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/pprofreceiver",
+    "path": "receiver/pprofreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/pprof"
+    ]
+  },
+  {
+    "components": [
+      "receiver/prometheusreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver",
+    "path": "receiver/prometheusreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheusremotewrite",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor"
+    ]
+  },
+  {
+    "components": [
+      "receiver/prometheusremotewritereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusremotewritereceiver",
+    "path": "receiver/prometheusremotewritereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor"
+    ]
+  },
+  {
+    "components": [
+      "receiver/pulsarreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/pulsarreceiver",
+    "path": "receiver/pulsarreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin"
+    ]
+  },
+  {
+    "components": [
+      "receiver/purefareceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/purefareceiver",
+    "path": "receiver/purefareceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/bearertokenauthextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/credentialsfile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver"
+    ]
+  },
+  {
+    "components": [
+      "receiver/purefbreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/purefbreceiver",
+    "path": "receiver/purefbreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/bearertokenauthextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/internal/credentialsfile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver"
+    ]
+  },
+  {
+    "components": [
+      "receiver/rabbitmqreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/rabbitmqreceiver",
+    "path": "receiver/rabbitmqreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/receivercreator"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/receivercreator",
+    "path": "receiver/receivercreator",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/redfishreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/redfishreceiver",
+    "path": "receiver/redfishreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/redisreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/redisreceiver",
+    "path": "receiver/redisreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/riakreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/riakreceiver",
+    "path": "receiver/riakreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/saphanareceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/saphanareceiver",
+    "path": "receiver/saphanareceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/signalfxreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/signalfxreceiver",
+    "path": "receiver/signalfxreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/signalfxexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/gopsutilenv",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchperresourceattr",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/signalfx"
+    ]
+  },
+  {
+    "components": [
+      "receiver/simpleprometheusreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/simpleprometheusreceiver",
+    "path": "receiver/simpleprometheusreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver"
+    ]
+  },
+  {
+    "components": [
+      "receiver/skywalkingreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/skywalkingreceiver",
+    "path": "receiver/skywalkingreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/skywalking"
+    ]
+  },
+  {
+    "components": [
+      "receiver/snmpreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/snmpreceiver",
+    "path": "receiver/snmpreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/snowflakereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/snowflakereceiver",
+    "path": "receiver/snowflakereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/solacereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/solacereceiver",
+    "path": "receiver/solacereceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/splunkenterprisereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/splunkenterprisereceiver",
+    "path": "receiver/splunkenterprisereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/splunkhecreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/splunkhecreceiver",
+    "path": "receiver/splunkhecreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/splunkhecexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchperresourceattr",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/pprof",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/splunk"
+    ]
+  },
+  {
+    "components": [
+      "receiver/sqlqueryreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sqlqueryreceiver",
+    "path": "receiver/sqlqueryreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sqlquery",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/sqlserverreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sqlserverreceiver",
+    "path": "receiver/sqlserverreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sqlquery",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters"
+    ]
+  },
+  {
+    "components": [
+      "receiver/sshcheckreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sshcheckreceiver",
+    "path": "receiver/sshcheckreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/statsdreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/statsdreceiver",
+    "path": "receiver/statsdreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal"
+    ]
+  },
+  {
+    "components": [
+      "receiver/stefreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/stefreceiver",
+    "path": "receiver/stefreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/stefexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common"
+    ]
+  },
+  {
+    "components": [
+      "receiver/syslogreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver",
+    "path": "receiver/syslogreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/systemdreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/systemdreceiver",
+    "path": "receiver/systemdreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/tcpcheckreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/tcpcheckreceiver",
+    "path": "receiver/tcpcheckreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/tcplogreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/tcplogreceiver",
+    "path": "receiver/tcplogreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/tlscheckreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/tlscheckreceiver",
+    "path": "receiver/tlscheckreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/udplogreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/udplogreceiver",
+    "path": "receiver/udplogreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/vcenterreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/vcenterreceiver",
+    "path": "receiver/vcenterreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/vcrreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/vcrreceiver",
+    "path": "receiver/vcrreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/webhookeventreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/webhookeventreceiver",
+    "path": "receiver/webhookeventreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/windowseventlogreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowseventlogreceiver",
+    "path": "receiver/windowseventlogreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza"
+    ]
+  },
+  {
+    "components": [
+      "receiver/windowsperfcountersreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowsperfcountersreceiver",
+    "path": "receiver/windowsperfcountersreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/winperfcounters"
+    ]
+  },
+  {
+    "components": [
+      "receiver/windowsservicereceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowsservicereceiver",
+    "path": "receiver/windowsservicereceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [
+      "receiver/yanggrpcreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/yanggrpcreceiver",
+    "path": "receiver/yanggrpcreceiver",
+    "requires": []
+  },
+  {
+    "components": [
+      "receiver/zipkinreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver",
+    "path": "receiver/zipkinreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin"
+    ]
+  },
+  {
+    "components": [
+      "receiver/zookeeperreceiver"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zookeeperreceiver",
+    "path": "receiver/zookeeperreceiver",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/scraper/zookeeperscraper"
+    ]
+  },
+  {
+    "components": [
+      "scraper/zookeeperscraper"
+    ],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/scraper/zookeeperscraper",
+    "path": "scraper/zookeeperscraper",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/testbed",
+    "path": "testbed",
+    "requires": [
+      "github.com/open-telemetry/opentelemetry-collector-contrib/connector/routingconnector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/connector/spanmetricsconnector",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/otelarrowexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/signalfxexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/stefexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/syslogexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/zipkinexporter",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/extension/ackextension",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/common",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/exp/metrics",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/gopsutilenv",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/grpcutil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/otelarrow",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/pdatautil",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchperresourceattr",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/datadog",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/experimentalmetricmetadata",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/golden",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/contexts/xprofile",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/xottl",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/sampling",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/signalfx",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/splunk",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatocumulativeprocessor",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/carbonreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/datadogreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/otelarrowreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/signalfxreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/splunkhecreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/stefreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver",
+      "github.com/open-telemetry/opentelemetry-collector-contrib/testbed/mockdatasenders/mockdatadogagentexporter"
+    ]
+  },
+  {
+    "components": [],
+    "module": "github.com/open-telemetry/opentelemetry-collector-contrib/testbed/mockdatasenders/mockdatadogagentexporter",
+    "path": "testbed/mockdatasenders/mockdatadogagentexporter",
+    "requires": []
+  }
+]

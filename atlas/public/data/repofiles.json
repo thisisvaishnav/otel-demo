@@ -1,0 +1,3505 @@
+{
+  "codeowners": [
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "*"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-releases-approvers"
+      ],
+      "pattern": ".github/workflows/prepare-release.yml"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-releases-approvers"
+      ],
+      "pattern": ".github/workflows/scripts/release-prepare-release.sh"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-releases-approvers"
+      ],
+      "pattern": ".github/workflows/scripts/set_release_tag.sh"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi"
+      ],
+      "pattern": "cmd/codecovgen/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "cmd/golden/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley",
+        "@atoulme",
+        "@tigrannajaryan",
+        "@douglascamata",
+        "@dpaasman00"
+      ],
+      "pattern": "cmd/opampsupervisor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "cmd/otelcontribcol/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "cmd/oteltestbedcol/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@codeboten",
+        "@Erog38",
+        "@bogdan-st"
+      ],
+      "pattern": "cmd/telemetrygen/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@XSAM"
+      ],
+      "pattern": "config/configdbauth/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@kuiperda"
+      ],
+      "pattern": "confmap/provider/aesprovider/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@aabmass",
+        "@dashpole",
+        "@jsuereth",
+        "@psx95",
+        "@braydonk",
+        "@ridwanmsharif"
+      ],
+      "pattern": "confmap/provider/googlesecretmanagerprovider/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9"
+      ],
+      "pattern": "confmap/provider/s3provider/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "confmap/provider/secretsmanagerprovider/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@akats7"
+      ],
+      "pattern": "connector/countconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@dineshg13",
+        "@jade-guiton-dd",
+        "@IbraheemA"
+      ],
+      "pattern": "connector/datadogconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@marctc"
+      ],
+      "pattern": "connector/exceptionsconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@akats7"
+      ],
+      "pattern": "connector/failoverconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@rlankfo",
+        "@jcreixell"
+      ],
+      "pattern": "connector/grafanacloudconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "connector/metricsaslogsconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@ChrsMark"
+      ],
+      "pattern": "connector/otlpjsonconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@bogdandrutu"
+      ],
+      "pattern": "connector/roundrobinconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth",
+        "@evan-bradley",
+        "@edmocosta",
+        "@bogdandrutu",
+        "@mwear"
+      ],
+      "pattern": "connector/routingconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mapno",
+        "@JaredTan95"
+      ],
+      "pattern": "connector/servicegraphconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@ChrsMark",
+        "@lahsivjar"
+      ],
+      "pattern": "connector/signaltometricsconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@JaredTan95",
+        "@Frapschen"
+      ],
+      "pattern": "connector/slowsqlconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@portertech",
+        "@Frapschen",
+        "@iblancasa"
+      ],
+      "pattern": "connector/spanmetricsconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@greatestusername",
+        "@shalper2",
+        "@crobert-1"
+      ],
+      "pattern": "connector/sumconnector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@sokoide",
+        "@mcube8"
+      ],
+      "pattern": "exporter/alertmanagerexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@vyagh"
+      ],
+      "pattern": "exporter/alibabacloudlogserviceexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@yaten2302"
+      ],
+      "pattern": "exporter/awscloudwatchlogsexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@mxiamxia"
+      ],
+      "pattern": "exporter/awsemfexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "exporter/awskinesisexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@pdelewski",
+        "@Erog38"
+      ],
+      "pattern": "exporter/awss3exporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@wangzlei",
+        "@srprash"
+      ],
+      "pattern": "exporter/awsxrayexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@hgaol",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "exporter/azureblobexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@ag-ramachandran"
+      ],
+      "pattern": "exporter/azuredataexplorerexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@hgaol"
+      ],
+      "pattern": "exporter/azuremonitorexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@bertysentry",
+        "@NassimBtk",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "exporter/bmchelixexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@emreyalvac"
+      ],
+      "pattern": "exporter/cassandraexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@hanjm",
+        "@Frapschen",
+        "@SpencerTorres"
+      ],
+      "pattern": "exporter/clickhouseexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@povilasv",
+        "@iblancasa",
+        "@douglascamata"
+      ],
+      "pattern": "exporter/coralogixexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@dineshg13",
+        "@liustanley",
+        "@songy23",
+        "@mackjmr",
+        "@jade-guiton-dd",
+        "@IbraheemA"
+      ],
+      "pattern": "exporter/datadogexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@martin-majlis-s1",
+        "@zdaratom-s1",
+        "@tomaz-s1"
+      ],
+      "pattern": "exporter/datasetexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@joker-star-l"
+      ],
+      "pattern": "exporter/dorisexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@JaredTan95",
+        "@blakerouse",
+        "@carsonip",
+        "@lahsivjar"
+      ],
+      "pattern": "exporter/elasticsearchexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dehaansa",
+        "@rlankfo",
+        "@mar4uk"
+      ],
+      "pattern": "exporter/faroexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@paulojmdias"
+      ],
+      "pattern": "exporter/fileexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@aabmass",
+        "@dashpole",
+        "@braydonk",
+        "@jsuereth",
+        "@psx95",
+        "@ridwanmsharif"
+      ],
+      "pattern": "exporter/googlecloudexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@alexvanboxel"
+      ],
+      "pattern": "exporter/googlecloudpubsubexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@constanca-m",
+        "@braydonk"
+      ],
+      "pattern": "exporter/googlecloudstorageexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@aabmass",
+        "@dashpole",
+        "@braydonk",
+        "@jsuereth",
+        "@psx95",
+        "@ridwanmsharif"
+      ],
+      "pattern": "exporter/googlemanagedprometheusexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@robbkidd"
+      ],
+      "pattern": "exporter/honeycombmarkerexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jacobmarble"
+      ],
+      "pattern": "exporter/influxdbexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pavolloffay",
+        "@MovieStoreGuy",
+        "@paulojmdias"
+      ],
+      "pattern": "exporter/kafkaexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@rlankfo",
+        "@iblancasa"
+      ],
+      "pattern": "exporter/loadbalancingexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@bogdandrutu",
+        "@khyatigandhi6",
+        "@avadhut123pisal"
+      ],
+      "pattern": "exporter/logicmonitorexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@yotamloe"
+      ],
+      "pattern": "exporter/logzioexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@suckatrash",
+        "@kalebpace",
+        "@ChrsMark"
+      ],
+      "pattern": "exporter/natsexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@ps48",
+        "@kylehounslow"
+      ],
+      "pattern": "exporter/opensearchexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd",
+        "@JakeDern"
+      ],
+      "pattern": "exporter/otelarrowexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@ArthurSens"
+      ],
+      "pattern": "exporter/prometheusexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@ArthurSens",
+        "@ywwg"
+      ],
+      "pattern": "exporter/prometheusremotewriteexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dao-jun"
+      ],
+      "pattern": "exporter/pulsarexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "exporter/rabbitmqexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@AkhigbeEromo"
+      ],
+      "pattern": "exporter/sematextexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@AbhiPrasad",
+        "@giortzisg"
+      ],
+      "pattern": "exporter/sentryexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@crobert-1"
+      ],
+      "pattern": "exporter/signalfxexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@dmitryax"
+      ],
+      "pattern": "exporter/splunkhecexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@tigrannajaryan",
+        "@dmitryax"
+      ],
+      "pattern": "exporter/stefexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@rnishtala-sumo",
+        "@pankaj101A",
+        "@jagan2221"
+      ],
+      "pattern": "exporter/sumologicexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@kasia-kujawa",
+        "@rnishtala-sumo",
+        "@andrzej-stencel"
+      ],
+      "pattern": "exporter/syslogexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@wgliang"
+      ],
+      "pattern": "exporter/tencentcloudlogserviceexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@jordivilaseca",
+        "@MoreraAlejandro"
+      ],
+      "pattern": "exporter/tinybirdexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@andrzej-stencel",
+        "@crobert-1"
+      ],
+      "pattern": "exporter/zipkinexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@splunkericl"
+      ],
+      "pattern": "extension/ackextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jamesmoessis",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "extension/asapauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@mxiamxia"
+      ],
+      "pattern": "extension/awsproxy/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@constanca-m",
+        "@dyl10s"
+      ],
+      "pattern": "extension/azureauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@frzifus"
+      ],
+      "pattern": "extension/basicauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@frzifus"
+      ],
+      "pattern": "extension/bearertokenauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@rogercoll"
+      ],
+      "pattern": "extension/cgroupruntimeextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dineshg13",
+        "@IbraheemA",
+        "@jade-guiton-dd",
+        "@mx-psi",
+        "@songy23"
+      ],
+      "pattern": "extension/datadogextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@XSAM"
+      ],
+      "pattern": "extension/dbauth/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@XSAM"
+      ],
+      "pattern": "extension/dbauth/awsiamdbauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@dao-jun",
+        "@dmitryax",
+        "@MovieStoreGuy",
+        "@VihasMakwana"
+      ],
+      "pattern": "extension/encoding/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@thmshmm"
+      ],
+      "pattern": "extension/encoding/avrologencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@constanca-m",
+        "@Kavindu-Dodan"
+      ],
+      "pattern": "extension/encoding/awscloudwatchmetricstreamsencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@constanca-m",
+        "@Kavindu-Dodan",
+        "@MichaelKatsoulis"
+      ],
+      "pattern": "extension/encoding/awslogsencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@constanca-m"
+      ],
+      "pattern": "extension/encoding/azureencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@constanca-m"
+      ],
+      "pattern": "extension/encoding/googlecloudlogentryencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@atoulme"
+      ],
+      "pattern": "extension/encoding/jaegerencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@VihasMakwana",
+        "@atoulme"
+      ],
+      "pattern": "extension/encoding/jsonlogencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dao-jun",
+        "@VihasMakwana"
+      ],
+      "pattern": "extension/encoding/otlpencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@JaredTan95"
+      ],
+      "pattern": "extension/encoding/skywalkingencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@atoulme"
+      ],
+      "pattern": "extension/encoding/textencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@dao-jun"
+      ],
+      "pattern": "extension/encoding/zipkinencodingextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@jaronoff97",
+        "@mx-psi"
+      ],
+      "pattern": "extension/filetelemetrypolicyextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@aabmass",
+        "@braydonk",
+        "@jsuereth",
+        "@psx95",
+        "@ridwanmsharif"
+      ],
+      "pattern": "extension/googleclientauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@VihasMakwana"
+      ],
+      "pattern": "extension/headerssetterextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley",
+        "@mwear"
+      ],
+      "pattern": "extension/healthcheckextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley",
+        "@mwear"
+      ],
+      "pattern": "extension/healthcheckv2extension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "extension/httpforwarderextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@yurishkuro",
+        "@frzifus"
+      ],
+      "pattern": "extension/jaegerremotesampling/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@rakesh-garimella"
+      ],
+      "pattern": "extension/k8sleaderelector/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pavolloffay",
+        "@codeboten",
+        "@dmitryax"
+      ],
+      "pattern": "extension/mcp/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pavankrish123"
+      ],
+      "pattern": "extension/oauth2clientauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "extension/observer/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@crobert-1",
+        "@jriguera"
+      ],
+      "pattern": "extension/observer/cfgardenobserver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "extension/observer/dockerobserver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "extension/observer/ecsobserver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "extension/observer/hostobserver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@ChrsMark"
+      ],
+      "pattern": "extension/observer/k8sobserver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@asweet-confluent"
+      ],
+      "pattern": "extension/oidcauthextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley",
+        "@douglascamata",
+        "@dpaasman00"
+      ],
+      "pattern": "extension/opampcustommessages/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@portertech",
+        "@evan-bradley",
+        "@tigrannajaryan",
+        "@douglascamata",
+        "@dpaasman00"
+      ],
+      "pattern": "extension/opampextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "extension/pprofextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "extension/remotetapextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@VihasMakwana",
+        "@iypetrov"
+      ],
+      "pattern": "extension/sdnotifyextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@erichsueh3"
+      ],
+      "pattern": "extension/sigv4authextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jerrytfleung",
+        "@cheempz"
+      ],
+      "pattern": "extension/solarwindsapmsettingsextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@atoulme",
+        "@swiatekm",
+        "@VihasMakwana"
+      ],
+      "pattern": "extension/storage/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@atoulme"
+      ],
+      "pattern": "extension/storage/dbstorage/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@swiatekm",
+        "@VihasMakwana"
+      ],
+      "pattern": "extension/storage/filestorage/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "extension/storage/redisstorageextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@rnishtala-sumo",
+        "@pankaj101A",
+        "@jagan2221"
+      ],
+      "pattern": "extension/sumologicextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@carsonip",
+        "@jmacd",
+        "@lahsivjar"
+      ],
+      "pattern": "extension/tailstorage/pebbletailstorageextension/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@mxiamxia"
+      ],
+      "pattern": "internal/aws/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "internal/collectd/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers"
+      ],
+      "pattern": "internal/common/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers"
+      ],
+      "pattern": "internal/coreinternal/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@dineshg13",
+        "@liustanley",
+        "@songy23",
+        "@mackjmr",
+        "@jade-guiton-dd",
+        "@IbraheemA"
+      ],
+      "pattern": "internal/datadog/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@dineshg13",
+        "@liustanley",
+        "@songy23",
+        "@mackjmr",
+        "@jade-guiton-dd",
+        "@IbraheemA"
+      ],
+      "pattern": "internal/datadog/e2e/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jamesmoessis",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "internal/docker/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@RichieSams"
+      ],
+      "pattern": "internal/exp/metrics/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers"
+      ],
+      "pattern": "internal/filter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd",
+        "@lquerel"
+      ],
+      "pattern": "internal/grpcutil/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley"
+      ],
+      "pattern": "internal/healthcheck/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "internal/k8sconfig/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@TylerHelmuth",
+        "@ChrsMark",
+        "@krisztianfekete"
+      ],
+      "pattern": "internal/k8sinventory/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@rakesh-garimella"
+      ],
+      "pattern": "internal/k8sleaderelectortest/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pavolloffay",
+        "@MovieStoreGuy",
+        "@paulojmdias"
+      ],
+      "pattern": "internal/kafka/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "internal/kubelet/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "internal/metadataproviders/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd",
+        "@JakeDern"
+      ],
+      "pattern": "internal/otelarrow/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "internal/pdatautil/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "internal/rabbitmq/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers"
+      ],
+      "pattern": "internal/sharedcomponent/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "internal/splunk/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@crobert-1",
+        "@dmitryax"
+      ],
+      "pattern": "internal/sqlquery/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "internal/tools/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@dmitryax"
+      ],
+      "pattern": "pkg/batchperresourceattr/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "pkg/batchpersignal/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@odubajDT"
+      ],
+      "pattern": "pkg/core/xidutils/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi",
+        "@dineshg13",
+        "@liustanley",
+        "@songy23",
+        "@mackjmr",
+        "@jade-guiton-dd",
+        "@IbraheemA"
+      ],
+      "pattern": "pkg/datadog/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "pkg/experimentalmetricmetadata/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd",
+        "@lahsivjar"
+      ],
+      "pattern": "pkg/expohisto/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "pkg/golden/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pavolloffay",
+        "@MovieStoreGuy",
+        "@paulojmdias"
+      ],
+      "pattern": "pkg/kafka/configkafka/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pavolloffay",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "pkg/kafka/topic/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth",
+        "@evan-bradley",
+        "@edmocosta"
+      ],
+      "pattern": "pkg/ottl/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth",
+        "@evan-bradley",
+        "@edmocosta"
+      ],
+      "pattern": "pkg/ottl/contexts/xprofile/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth",
+        "@evan-bradley",
+        "@edmocosta"
+      ],
+      "pattern": "pkg/ottl/xottl/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "pkg/pdatatest/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mx-psi"
+      ],
+      "pattern": "pkg/resourcetotelemetry/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@kentquirk",
+        "@jmacd"
+      ],
+      "pattern": "pkg/sampling/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@braydonk"
+      ],
+      "pattern": "pkg/semconvtest/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@andrzej-stencel",
+        "@atoulme"
+      ],
+      "pattern": "pkg/stanza/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@andrzej-stencel",
+        "@paulojmdias",
+        "@VihasMakwana",
+        "@braydonk"
+      ],
+      "pattern": "pkg/stanza/fileconsumer/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@belimawr",
+        "@namco1992"
+      ],
+      "pattern": "pkg/stanza/operator/input/journald/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "pkg/stanza/operator/input/tcp/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley"
+      ],
+      "pattern": "pkg/status/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers",
+        "@atoulme",
+        "@cparkins"
+      ],
+      "pattern": "pkg/translator/azure/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@cparkins",
+        "@MikeGoldsmith",
+        "@constanca-m"
+      ],
+      "pattern": "pkg/translator/azurelogs/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mar4uk",
+        "@rlankfo"
+      ],
+      "pattern": "pkg/translator/faro/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers",
+        "@frzifus"
+      ],
+      "pattern": "pkg/translator/jaeger/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mar4uk"
+      ],
+      "pattern": "pkg/translator/loki/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@florianl"
+      ],
+      "pattern": "pkg/translator/pprof/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@bertysentry",
+        "@ArthurSens"
+      ],
+      "pattern": "pkg/translator/prometheus/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole"
+      ],
+      "pattern": "pkg/translator/prometheusremotewrite/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "pkg/translator/signalfx/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@JaredTan95"
+      ],
+      "pattern": "pkg/translator/skywalking/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@dmitryax",
+        "@crobert-1"
+      ],
+      "pattern": "pkg/translator/splunk/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@andrzej-stencel",
+        "@crobert-1"
+      ],
+      "pattern": "pkg/translator/zipkin/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@alxbl",
+        "@pjanotti"
+      ],
+      "pattern": "pkg/winperfcounters/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@crobert-1"
+      ],
+      "pattern": "pkg/xk8stest/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Kavindu-Dodan"
+      ],
+      "pattern": "pkg/xstreamencoding/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MikeGoldsmith",
+        "@VinozzZ",
+        "@jmacd"
+      ],
+      "pattern": "processor/adaptivetailsamplingprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@boostchicken"
+      ],
+      "pattern": "processor/attributesprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@povilasv",
+        "@iblancasa",
+        "@dmitryax"
+      ],
+      "pattern": "processor/awsecsattributesprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@YElayyat",
+        "@jmacd"
+      ],
+      "pattern": "processor/cardinalityguardianprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@crobert-1",
+        "@povilasv",
+        "@iblancasa"
+      ],
+      "pattern": "processor/coralogixprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth"
+      ],
+      "pattern": "processor/cumulativetodeltaprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@RichieSams"
+      ],
+      "pattern": "processor/deltatocumulativeprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9"
+      ],
+      "pattern": "processor/deltatorateprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MikeGoldsmith",
+        "@atoulme",
+        "@martinjt"
+      ],
+      "pattern": "processor/drainprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth",
+        "@evan-bradley",
+        "@edmocosta",
+        "@bogdandrutu"
+      ],
+      "pattern": "processor/filterprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth",
+        "@kylehounslow"
+      ],
+      "pattern": "processor/genainormalizerprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@andrzej-stencel",
+        "@michalpristas",
+        "@rogercoll"
+      ],
+      "pattern": "processor/geoipprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@rnishtala-sumo",
+        "@amdprophet"
+      ],
+      "pattern": "processor/groupbyattrsprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@iblancasa"
+      ],
+      "pattern": "processor/groupbytraceprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@RichieSams"
+      ],
+      "pattern": "processor/intervalprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@aarvee11"
+      ],
+      "pattern": "processor/isolationforestprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@TylerHelmuth",
+        "@ChrsMark",
+        "@odubajDT"
+      ],
+      "pattern": "processor/k8sattributesprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MikeGoldsmith"
+      ],
+      "pattern": "processor/logdedupprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dehaansa"
+      ],
+      "pattern": "processor/logstransformprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jsvd",
+        "@dehaansa",
+        "@VihasMakwana"
+      ],
+      "pattern": "processor/lookupprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@crobert-1"
+      ],
+      "pattern": "processor/metricsgenerationprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@ridwanmsharif"
+      ],
+      "pattern": "processor/metricstarttimeprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@himanshu130700"
+      ],
+      "pattern": "processor/metricstransformprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd"
+      ],
+      "pattern": "processor/probabilisticsamplerprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@mx-psi",
+        "@TylerHelmuth",
+        "@iblancasa"
+      ],
+      "pattern": "processor/redactionprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@jaronoff97"
+      ],
+      "pattern": "processor/remotetapprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/akamai/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/alibaba/ecs/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/azure/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/digitalocean/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@bacherfl",
+        "@evan-bradley"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/dynatrace/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/hetzner/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/ibmcloud/classic/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/ibmcloud/vpc/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/openstack/nova/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@geekdave"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/oraclecloud/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/scaleway/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/tencent/cvm/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/upcloud/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@paulojmdias"
+      ],
+      "pattern": "processor/resourcedetectionprocessor/internal/vultr/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "processor/resourceprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@rnterbush",
+        "@pavankrish123"
+      ],
+      "pattern": "processor/rollingspanlatencyprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@ankitpatel96",
+        "@dineshg13",
+        "@MikeGoldsmith"
+      ],
+      "pattern": "processor/schemaprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@hilmarf",
+        "@jmacd"
+      ],
+      "pattern": "processor/signingprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@boostchicken"
+      ],
+      "pattern": "processor/spanprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@portertech",
+        "@csmarchbanks"
+      ],
+      "pattern": "processor/spanpruningprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@rnishtala-sumo",
+        "@pankaj101A",
+        "@jagan2221"
+      ],
+      "pattern": "processor/sumologicprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@portertech",
+        "@jmacd",
+        "@csmarchbanks",
+        "@carsonip"
+      ],
+      "pattern": "processor/tailsamplingprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@jaronoff97",
+        "@mx-psi"
+      ],
+      "pattern": "processor/telemetrypolicyprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@TylerHelmuth",
+        "@evan-bradley",
+        "@edmocosta",
+        "@bogdandrutu"
+      ],
+      "pattern": "processor/transformprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Caleb-Hurshman",
+        "@Dylan-M"
+      ],
+      "pattern": "processor/transformprocessor/internal/logparsingfuncs/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@schmikei",
+        "@rnishtala-sumo"
+      ],
+      "pattern": "processor/unrollprocessor/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pjanotti"
+      ],
+      "pattern": "receiver/activedirectorydsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pjanotti",
+        "@pankaj101A",
+        "@jagan2221"
+      ],
+      "pattern": "receiver/activedirectoryinvreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@antonblock"
+      ],
+      "pattern": "receiver/aerospikereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@colelaven",
+        "@ishleenk17"
+      ],
+      "pattern": "receiver/apachereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Caleb-Hurshman",
+        "@mrsillydog"
+      ],
+      "pattern": "receiver/apachesparkreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@schmikei",
+        "@dyl10s"
+      ],
+      "pattern": "receiver/awscloudwatchreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@pxaws"
+      ],
+      "pattern": "receiver/awscontainerinsightreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9"
+      ],
+      "pattern": "receiver/awsecscontainermetricsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9"
+      ],
+      "pattern": "receiver/awsfirehosereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MichaelKatsoulis",
+        "@Kavindu-Dodan",
+        "@pjanotti"
+      ],
+      "pattern": "receiver/awslambdareceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@adcharre"
+      ],
+      "pattern": "receiver/awss3receiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@wangzlei",
+        "@srprash"
+      ],
+      "pattern": "receiver/awsxrayreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@eedorenko",
+        "@mx-psi",
+        "@dyl10s"
+      ],
+      "pattern": "receiver/azureblobreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@cparkins",
+        "@dyl10s"
+      ],
+      "pattern": "receiver/azureeventhubreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd",
+        "@MichaelKatsoulis",
+        "@constanca-m"
+      ],
+      "pattern": "receiver/azurefunctionsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@celian-garcia",
+        "@ishleenk17"
+      ],
+      "pattern": "receiver/azuremonitorreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "receiver/carbonreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@jamesmoessis"
+      ],
+      "pattern": "receiver/chronyreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "receiver/ciscoosreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "receiver/ciscoosreceiver/internal/scraper/interfacesscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "receiver/ciscoosreceiver/internal/scraper/systemscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dehaansa"
+      ],
+      "pattern": "receiver/cloudflarereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@crobert-1"
+      ],
+      "pattern": "receiver/cloudfoundryreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "receiver/collectdreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@antonblock"
+      ],
+      "pattern": "receiver/couchdbreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@boostchicken",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "receiver/datadogreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "receiver/dnscheckreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jamesmoessis"
+      ],
+      "pattern": "receiver/dockerstatsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jsirianni",
+        "@VihasMakwana",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/elasticsearchreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley",
+        "@zirain"
+      ],
+      "pattern": "receiver/envoyalsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jamesmoessis",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "receiver/expvarreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dehaansa",
+        "@rlankfo",
+        "@mar4uk"
+      ],
+      "pattern": "receiver/faroreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@andrzej-stencel",
+        "@paulojmdias",
+        "@VihasMakwana",
+        "@braydonk"
+      ],
+      "pattern": "receiver/filelogreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "receiver/filestatsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@JonathanWamsley"
+      ],
+      "pattern": "receiver/flinkmetricsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "receiver/fluentforwardreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@adrielp",
+        "@crobert-1"
+      ],
+      "pattern": "receiver/githubreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@adrielp",
+        "@niwoerner"
+      ],
+      "pattern": "receiver/gitlabreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole"
+      ],
+      "pattern": "receiver/googlecloudmonitoringreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@constanca-m"
+      ],
+      "pattern": "receiver/googlecloudpubsubpushreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@alexvanboxel"
+      ],
+      "pattern": "receiver/googlecloudpubsubreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@nsj07"
+      ],
+      "pattern": "receiver/googlecloudspannerreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@MovieStoreGuy"
+      ],
+      "pattern": "receiver/haproxyreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/cpuscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/diskscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/filesystemscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/loadscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/memoryscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/networkscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/nfsscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/pagingscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/processesscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/processscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@braydonk",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/hostmetricsreceiver/internal/scraper/systemscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@VenuEmmadi"
+      ],
+      "pattern": "receiver/httpcheckreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@vyagh"
+      ],
+      "pattern": "receiver/huaweicloudcesreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@jkoronaAtCisco"
+      ],
+      "pattern": "receiver/icmpcheckreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@ishleenk17",
+        "@pjanotti"
+      ],
+      "pattern": "receiver/iisreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jacobmarble"
+      ],
+      "pattern": "receiver/influxdbreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@yurishkuro"
+      ],
+      "pattern": "receiver/jaegerreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@belimawr",
+        "@namco1992"
+      ],
+      "pattern": "receiver/journaldreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@TylerHelmuth",
+        "@povilasv",
+        "@ChrsMark"
+      ],
+      "pattern": "receiver/k8sclusterreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@TylerHelmuth",
+        "@ChrsMark"
+      ],
+      "pattern": "receiver/k8seventsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@TylerHelmuth",
+        "@ChrsMark",
+        "@krisztianfekete"
+      ],
+      "pattern": "receiver/k8sobjectsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "receiver/kafkametricsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pavolloffay",
+        "@MovieStoreGuy",
+        "@paulojmdias"
+      ],
+      "pattern": "receiver/kafkareceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@TylerHelmuth",
+        "@ChrsMark"
+      ],
+      "pattern": "receiver/kubeletstatsreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mterhar"
+      ],
+      "pattern": "receiver/libhoneyreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mar4uk"
+      ],
+      "pattern": "receiver/lokireceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Caleb-Hurshman",
+        "@atoulme"
+      ],
+      "pattern": "receiver/macosunifiedloggingreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jsirianni"
+      ],
+      "pattern": "receiver/memcachedreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@justinianvoss22",
+        "@dyl10s",
+        "@ishleenk17"
+      ],
+      "pattern": "receiver/mongodbatlasreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@justinianvoss22",
+        "@dyl10s",
+        "@ishleenk17",
+        "@shrenikjain38",
+        "@ebrdarSplunk",
+        "@XSAM",
+        "@akshays-19",
+        "@sv-splunk",
+        "@splunk-shanu"
+      ],
+      "pattern": "receiver/mongodbreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@antonblock",
+        "@ishleenk17",
+        "@ebrdarSplunk",
+        "@XSAM",
+        "@akshays-19",
+        "@sv-splunk",
+        "@splunk-shanu"
+      ],
+      "pattern": "receiver/mysqlreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@sinkingpoint"
+      ],
+      "pattern": "receiver/namedpipereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@evan-bradley",
+        "@dlopes7"
+      ],
+      "pattern": "receiver/netflowreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@colelaven",
+        "@ishleenk17"
+      ],
+      "pattern": "receiver/nginxreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@schmikei"
+      ],
+      "pattern": "receiver/nsxtreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@paulojmdias"
+      ],
+      "pattern": "receiver/ntpreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@crobert-1",
+        "@atoulme",
+        "@ebrdarSplunk",
+        "@XSAM",
+        "@akshays-19",
+        "@sv-splunk",
+        "@splunk-shanu"
+      ],
+      "pattern": "receiver/oracledbreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@smithclay"
+      ],
+      "pattern": "receiver/osqueryreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd",
+        "@JakeDern"
+      ],
+      "pattern": "receiver/otelarrowreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "receiver/otlpjsonfilereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@rogercoll"
+      ],
+      "pattern": "receiver/podmanreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@antonblock",
+        "@ishleenk17",
+        "@Caleb-Hurshman",
+        "@ebrdarSplunk",
+        "@XSAM",
+        "@akshays-19",
+        "@sv-splunk",
+        "@splunk-shanu"
+      ],
+      "pattern": "receiver/postgresqlreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@atoulme"
+      ],
+      "pattern": "receiver/pprofreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@Aneurysm9",
+        "@dashpole",
+        "@ArthurSens",
+        "@krajorama"
+      ],
+      "pattern": "receiver/prometheusreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@ArthurSens",
+        "@perebaj",
+        "@himanshu130700"
+      ],
+      "pattern": "receiver/prometheusremotewritereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dao-jun"
+      ],
+      "pattern": "receiver/pulsarreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dgoscn",
+        "@chrroberts-pure"
+      ],
+      "pattern": "receiver/purefareceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dgoscn",
+        "@chrroberts-pure"
+      ],
+      "pattern": "receiver/purefbreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@VenuEmmadi"
+      ],
+      "pattern": "receiver/rabbitmqreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@ChrsMark"
+      ],
+      "pattern": "receiver/receivercreator/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@steven-freed",
+        "@khushijain21"
+      ],
+      "pattern": "receiver/redfishreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@hughesjj"
+      ],
+      "pattern": "receiver/redisreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@armstrmi"
+      ],
+      "pattern": "receiver/riakreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dehaansa"
+      ],
+      "pattern": "receiver/saphanareceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax"
+      ],
+      "pattern": "receiver/signalfxreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@JaredTan95"
+      ],
+      "pattern": "receiver/skywalkingreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@tamir-michaeli"
+      ],
+      "pattern": "receiver/snmpreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@shalper2"
+      ],
+      "pattern": "receiver/snowflakereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mcardy"
+      ],
+      "pattern": "receiver/solacereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@shalper2",
+        "@MovieStoreGuy",
+        "@greatestusername"
+      ],
+      "pattern": "receiver/splunkenterprisereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "receiver/splunkhecreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dmitryax",
+        "@crobert-1"
+      ],
+      "pattern": "receiver/sqlqueryreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@sincejune",
+        "@crobert-1",
+        "@sv-splunk",
+        "@ebrdarSplunk",
+        "@XSAM",
+        "@akshays-19",
+        "@splunk-shanu"
+      ],
+      "pattern": "receiver/sqlserverreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@ishaish103"
+      ],
+      "pattern": "receiver/sshcheckreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@jmacd",
+        "@dmitryax"
+      ],
+      "pattern": "receiver/statsdreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@tigrannajaryan",
+        "@MovieStoreGuy",
+        "@dmitryax",
+        "@atoulme",
+        "@pjanotti",
+        "@crobert-1"
+      ],
+      "pattern": "receiver/stefreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@andrzej-stencel"
+      ],
+      "pattern": "receiver/syslogreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "receiver/systemdreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@michael-burt",
+        "@chengchuanpeng",
+        "@yanfeng1992"
+      ],
+      "pattern": "receiver/tcpcheckreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@VihasMakwana"
+      ],
+      "pattern": "receiver/tcplogreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@michael-burt"
+      ],
+      "pattern": "receiver/tlscheckreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@VihasMakwana"
+      ],
+      "pattern": "receiver/udplogreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@schmikei",
+        "@ishleenk17"
+      ],
+      "pattern": "receiver/vcenterreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@robertgustafsonsplunk",
+        "@garrett-splunk"
+      ],
+      "pattern": "receiver/vcrreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme",
+        "@shalper2"
+      ],
+      "pattern": "receiver/webhookeventreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@mrsillydog",
+        "@pjanotti"
+      ],
+      "pattern": "receiver/windowseventlogreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@dashpole",
+        "@alxbl",
+        "@pjanotti"
+      ],
+      "pattern": "receiver/windowsperfcountersreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@pjanotti",
+        "@shalper2"
+      ],
+      "pattern": "receiver/windowsservicereceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@atoulme"
+      ],
+      "pattern": "receiver/yanggrpcreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@MovieStoreGuy",
+        "@andrzej-stencel",
+        "@crobert-1"
+      ],
+      "pattern": "receiver/zipkinreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@antonblock",
+        "@akats7"
+      ],
+      "pattern": "receiver/zookeeperreceiver/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@antonblock",
+        "@akats7"
+      ],
+      "pattern": "scraper/zookeeperscraper/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers"
+      ],
+      "pattern": "testbed/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@boostchicken"
+      ],
+      "pattern": "testbed/mockdatasenders/mockdatadogagentexporter/"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "reports/distributions/core.yaml"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "reports/distributions/contrib.yaml"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "reports/distributions/k8s.yaml"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "reports/distributions/otlp.yaml"
+    },
+    {
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "pattern": "receiver/simpleprometheusreceiver/"
+    }
+  ],
+  "distributions": [
+    {
+      "name": "core",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-releases/tree/main/distributions/otelcol"
+    },
+    {
+      "name": "contrib",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-releases/tree/main/distributions/otelcol-contrib"
+    },
+    {
+      "name": "k8s",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-releases/tree/main/distributions/otelcol-k8s"
+    },
+    {
+      "name": "otlp",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-releases/tree/main/distributions/otelcol-otlp"
+    }
+  ],
+  "files": {
+    ".checkapi.yaml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".chloggen/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".chloggen/README.md": {
+      "headings": [
+        "Changelog folder"
+      ],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "title": "Changelog folder"
+    },
+    ".codecov.yml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".gitattributes": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/CODEOWNERS": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/ISSUE_TEMPLATE/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/actionlint.yaml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/actions/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/component_labels.txt": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/lychee.toml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/pull_request_template.md": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".github/workflows/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".gitignore": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".golangci.yml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".mdatagen.yaml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    ".schemagen.yaml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "AGENTS.md": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "CHANGELOG-API.md": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "CHANGELOG.md": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "CLAUDE.md": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "CONTRIBUTING.md": {
+      "headings": [
+        "Contributing",
+        "Local Testing",
+        "Changelog",
+        "Overview",
+        "Adding a Changelog Entry",
+        "When to add a Changelog Entry",
+        "Pull-requests",
+        "Title guidelines",
+        "Description guidelines",
+        "AI-assisted contributions",
+        "Issue Triaging",
+        "Adding Labels via Comments",
+        "Rerunning Failed Workflows",
+        "Approving Workflows for Outside Contributors",
+        "CI Scope Detection",
+        "Portable Code",
+        "Donating New Components",
+        "Semantic Conventions compatibility",
+        "Adding metrics to existing receivers",
+        "General Recommendations",
+        "Membership, Roles, and Responsibilities",
+        "Membership levels",
+        "Becoming a Code Owner",
+        "Requirements",
+        "How to become a Code Owner",
+        "Emeritus roles",
+        "Approvers and maintainers",
+        "Code Owners",
+        "Makefile Guidelines",
+        "Module-level targets",
+        "Repo-level targets",
+        "Default targets"
+      ],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "title": "Contributing"
+    },
+    "LICENSE": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "Makefile": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "Makefile.Common": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "Makefile.Weaver": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "NOTICE": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "README.md": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "cmd/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "config/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "confmap/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "connector/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "distributions.yaml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "docs/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "docs/new-components.md": {
+      "headings": [
+        "Donating new components",
+        "Hosting your component outside of the opentelemetry-collector-contrib repository",
+        "Exploring available options",
+        "Building your component",
+        "Using your component",
+        "Publishing your component",
+        "Distributing your component",
+        "Adding your component to the opentelemetry-collector-contrib repository",
+        "Donation",
+        "Releasing New Components"
+      ],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "title": "Donating new components"
+    },
+    "docs/release.md": {
+      "headings": [
+        "opentelemetry-collector-contrib Release Procedure",
+        "Releasing opentelemetry-collector-contrib",
+        "Post-release steps",
+        "Bugfix releases",
+        "Release schedule and release manager rotation"
+      ],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "title": "opentelemetry-collector-contrib Release Procedure"
+    },
+    "docs/templates.md": {
+      "headings": [
+        "Text templates for repetitive tasks",
+        "New Triager Proposal"
+      ],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "title": "Text templates for repetitive tasks"
+    },
+    "docs/testing.md": {
+      "headings": [
+        "Testing your components",
+        "Constraining build targets"
+      ],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "title": "Testing your components"
+    },
+    "examples/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "exporter/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "extension/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "go.mod": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "internal/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "issue-triaging.md": {
+      "headings": [
+        "Issue management",
+        "Roles",
+        "Triagers",
+        "Code Owners",
+        "Community Members",
+        "Triage process",
+        "Triage process flowchart",
+        "Issue assignment",
+        "Label Definitions",
+        "State diagram"
+      ],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ],
+      "title": "Issue management"
+    },
+    "pkg/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "processor/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "receiver/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "renovate.json": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "reports/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "scraper/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    },
+    "testbed/": {
+      "headings": [],
+      "kind": "dir",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers",
+        "@open-telemetry/collector-approvers"
+      ]
+    },
+    "versions.yaml": {
+      "headings": [],
+      "kind": "file",
+      "owners": [
+        "@open-telemetry/collector-contrib-approvers"
+      ]
+    }
+  }
+}
